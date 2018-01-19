@@ -20,7 +20,6 @@
 		C09F12DB1F1C39B70013BFBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09F12DA1F1C39B70013BFBC /* AppDelegate.swift */; };
 		C09F12E01F1C39B70013BFBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09F12DE1F1C39B70013BFBC /* Main.storyboard */; };
 		C09F12E51F1C39B70013BFBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09F12E31F1C39B70013BFBC /* LaunchScreen.storyboard */; };
-		C09F13141F1C47BE0013BFBC /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09F130D1F1C47960013BFBC /* Park.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		C09F12DF1F1C39B70013BFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C09F12E41F1C39B70013BFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C09F12E61F1C39B70013BFBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C09F130D1F1C47960013BFBC /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 		C09F130B1F1C47960013BFBC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C09F130D1F1C47960013BFBC /* Park.swift */,
 				9F6266C8201168CD00404E5A /* School.swift */,
 			);
 			path = Models;
@@ -202,7 +199,6 @@
 				9FE7AB621FF554C800BD93B9 /* StepsViewController.swift in Sources */,
 				C09F12DB1F1C39B70013BFBC /* AppDelegate.swift in Sources */,
 				9F6266CD201169AF00404E5A /* SchoolMapOverlayView.swift in Sources */,
-				C09F13141F1C47BE0013BFBC /* Park.swift in Sources */,
 				9F6266C7201167BD00404E5A /* MapViewController.swift in Sources */,
 				9F6266C9201168CD00404E5A /* School.swift in Sources */,
 			);
