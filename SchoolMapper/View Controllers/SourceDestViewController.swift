@@ -488,7 +488,7 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
             
             var routePath = myGraph.findPath(from: sourceNode, to: destNode) //find the path with builtin GK findPath func
             
-            //print(routePath) //this array is not empty, it contains myNode types
+            print(routePath) //this array is not empty, it contains myNode types
             distance = feetCost(for: routePath) //get the cost of the entire route
             
             
