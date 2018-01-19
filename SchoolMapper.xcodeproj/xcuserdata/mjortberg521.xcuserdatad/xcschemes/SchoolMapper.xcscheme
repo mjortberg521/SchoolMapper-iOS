@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C09F12D61F1C39B70013BFBC"
-               BuildableName = "Park View.app"
+               BuildableName = "SchoolMapper.app"
                BlueprintName = "Park View"
                ReferencedContainer = "container:SchoolMapper.xcodeproj">
             </BuildableReference>
@@ -34,7 +34,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C09F12D61F1C39B70013BFBC"
-            BuildableName = "Park View.app"
+            BuildableName = "SchoolMapper.app"
             BlueprintName = "Park View"
             ReferencedContainer = "container:SchoolMapper.xcodeproj">
          </BuildableReference>
@@ -58,7 +58,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C09F12D61F1C39B70013BFBC"
-            BuildableName = "Park View.app"
+            BuildableName = "SchoolMapper.app"
             BlueprintName = "Park View"
             ReferencedContainer = "container:SchoolMapper.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C09F12D61F1C39B70013BFBC"
-            BuildableName = "Park View.app"
+            BuildableName = "SchoolMapper.app"
             BlueprintName = "Park View"
             ReferencedContainer = "container:SchoolMapper.xcodeproj">
          </BuildableReference>
