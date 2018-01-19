@@ -494,7 +494,7 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
             
             routeName = sourceTextField.text! + "-" + destTextField.text! //see override func below
             lastCoordName = destTextField.text!
-            print(routeName)
+            //print(routeName)
             
             
             func makeRoutePoints(array:[GKGraphNode]) { //takes path as the argument, creates an array of string lat/long coords from plist
