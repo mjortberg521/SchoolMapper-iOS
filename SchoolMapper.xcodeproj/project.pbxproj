@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F3986C220028A8D006E5EA8 /* Latitudes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F39C72720010C6C0032C30A /* Latitudes.plist */; };
+		9F3986C320028A8D006E5EA8 /* Longitudes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F39C725200055B10032C30A /* Longitudes.plist */; };
+		9F6266C7201167BD00404E5A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266C6201167BD00404E5A /* MapViewController.swift */; };
+		9F6266C9201168CD00404E5A /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266C8201168CD00404E5A /* School.swift */; };
+		9F6266CB2011695500404E5A /* SchoolMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266CA2011695500404E5A /* SchoolMapOverlay.swift */; };
+		9F6266CD201169AF00404E5A /* SchoolMapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266CC201169AF00404E5A /* SchoolMapOverlayView.swift */; };
+		9F6B51231FF01879009051F4 /* GBS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F6B51221FF01879009051F4 /* GBS.plist */; };
+		9F7B79991FF2C216000C24BB /* SourceDestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B79981FF2C216000C24BB /* SourceDestViewController.swift */; };
+		9F8FF9CA2012736300527074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8FF9C92012736300527074 /* Assets.xcassets */; };
+		9FE7AB621FF554C800BD93B9 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7AB611FF554C800BD93B9 /* StepsViewController.swift */; };
+		C09F12DB1F1C39B70013BFBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09F12DA1F1C39B70013BFBC /* AppDelegate.swift */; };
+		C09F12E01F1C39B70013BFBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09F12DE1F1C39B70013BFBC /* Main.storyboard */; };
+		C09F12E51F1C39B70013BFBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09F12E31F1C39B70013BFBC /* LaunchScreen.storyboard */; };
+		C09F13141F1C47BE0013BFBC /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09F130D1F1C47960013BFBC /* Park.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9F39C725200055B10032C30A /* Longitudes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Longitudes.plist; sourceTree = "<group>"; };
+		9F39C72720010C6C0032C30A /* Latitudes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Latitudes.plist; sourceTree = "<group>"; };
+		9F6266C6201167BD00404E5A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9F6266C8201168CD00404E5A /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		9F6266CA2011695500404E5A /* SchoolMapOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMapOverlay.swift; sourceTree = "<group>"; };
+		9F6266CC201169AF00404E5A /* SchoolMapOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMapOverlayView.swift; sourceTree = "<group>"; };
+		9F6B51221FF01879009051F4 /* GBS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GBS.plist; sourceTree = "<group>"; };
+		9F7B79981FF2C216000C24BB /* SourceDestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDestViewController.swift; sourceTree = "<group>"; };
+		9F8FF9C92012736300527074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		9FE7AB611FF554C800BD93B9 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
+		C09F12D71F1C39B70013BFBC /* SchoolMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C09F12DA1F1C39B70013BFBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C09F12DF1F1C39B70013BFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C09F12E41F1C39B70013BFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C09F12E61F1C39B70013BFBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C09F130D1F1C47960013BFBC /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C09F12D41F1C39B70013BFBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C09F12CE1F1C39B70013BFBC = {
+			isa = PBXGroup;
+			children = (
+				C09F12D91F1C39B70013BFBC /* SchoolMapper */,
+				C09F12D81F1C39B70013BFBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C09F12D81F1C39B70013BFBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C09F12D71F1C39B70013BFBC /* SchoolMapper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C09F12D91F1C39B70013BFBC /* SchoolMapper */ = {
+			isa = PBXGroup;
+			children = (
+				C09F12EC1F1C40D60013BFBC /* School Information */,
+				C09F130B1F1C47960013BFBC /* Models */,
+				C09F130E1F1C47990013BFBC /* Overlays */,
+				C09F12FA1F1C40D60013BFBC /* View Controllers */,
+				C09F12DA1F1C39B70013BFBC /* AppDelegate.swift */,
+				C09F12DE1F1C39B70013BFBC /* Main.storyboard */,
+				9F8FF9C92012736300527074 /* Assets.xcassets */,
+				C09F12E31F1C39B70013BFBC /* LaunchScreen.storyboard */,
+				C09F12E61F1C39B70013BFBC /* Info.plist */,
+			);
+			path = SchoolMapper;
+			sourceTree = "<group>";
+		};
+		C09F12EC1F1C40D60013BFBC /* School Information */ = {
+			isa = PBXGroup;
+			children = (
+				9F39C72720010C6C0032C30A /* Latitudes.plist */,
+				9F39C725200055B10032C30A /* Longitudes.plist */,
+				9F6B51221FF01879009051F4 /* GBS.plist */,
+			);
+			path = "School Information";
+			sourceTree = "<group>";
+		};
+		C09F12FA1F1C40D60013BFBC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F7B79981FF2C216000C24BB /* SourceDestViewController.swift */,
+				9F6266C6201167BD00404E5A /* MapViewController.swift */,
+				9FE7AB611FF554C800BD93B9 /* StepsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C09F130B1F1C47960013BFBC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C09F130D1F1C47960013BFBC /* Park.swift */,
+				9F6266C8201168CD00404E5A /* School.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C09F130E1F1C47990013BFBC /* Overlays */ = {
+			isa = PBXGroup;
+			children = (
+				9F6266CA2011695500404E5A /* SchoolMapOverlay.swift */,
+				9F6266CC201169AF00404E5A /* SchoolMapOverlayView.swift */,
+			);
+			path = Overlays;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C09F12D61F1C39B70013BFBC /* Park View */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C09F12E91F1C39B70013BFBC /* Build configuration list for PBXNativeTarget "Park View" */;
+			buildPhases = (
+				C09F12D31F1C39B70013BFBC /* Sources */,
+				C09F12D41F1C39B70013BFBC /* Frameworks */,
+				C09F12D51F1C39B70013BFBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Park View";
+			productName = "Park View";
+			productReference = C09F12D71F1C39B70013BFBC /* SchoolMapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C09F12CF1F1C39B70013BFBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Matthew Jortberg";
+				TargetAttributes = {
+					C09F12D61F1C39B70013BFBC = {
+						CreatedOnToolsVersion = 9.0;
+					};
+				};
+			};
+			buildConfigurationList = C09F12D21F1C39B70013BFBC /* Build configuration list for PBXProject "SchoolMapper" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C09F12CE1F1C39B70013BFBC;
+			productRefGroup = C09F12D81F1C39B70013BFBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C09F12D61F1C39B70013BFBC /* Park View */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C09F12D51F1C39B70013BFBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3986C220028A8D006E5EA8 /* Latitudes.plist in Resources */,
+				9F3986C320028A8D006E5EA8 /* Longitudes.plist in Resources */,
+				C09F12E51F1C39B70013BFBC /* LaunchScreen.storyboard in Resources */,
+				C09F12E01F1C39B70013BFBC /* Main.storyboard in Resources */,
+				9F8FF9CA2012736300527074 /* Assets.xcassets in Resources */,
+				9F6B51231FF01879009051F4 /* GBS.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C09F12D31F1C39B70013BFBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F7B79991FF2C216000C24BB /* SourceDestViewController.swift in Sources */,
+				9F6266CB2011695500404E5A /* SchoolMapOverlay.swift in Sources */,
+				9FE7AB621FF554C800BD93B9 /* StepsViewController.swift in Sources */,
+				C09F12DB1F1C39B70013BFBC /* AppDelegate.swift in Sources */,
+				9F6266CD201169AF00404E5A /* SchoolMapOverlayView.swift in Sources */,
+				C09F13141F1C47BE0013BFBC /* Park.swift in Sources */,
+				9F6266C7201167BD00404E5A /* MapViewController.swift in Sources */,
+				9F6266C9201168CD00404E5A /* School.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C09F12DE1F1C39B70013BFBC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C09F12DF1F1C39B70013BFBC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C09F12E31F1C39B70013BFBC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C09F12E41F1C39B70013BFBC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C09F12E71F1C39B70013BFBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C09F12E81F1C39B70013BFBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C09F12EA1F1C39B70013BFBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 8RN8UZGBQ9;
+				INFOPLIST_FILE = SchoolMapper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mjortberg521.SchoolMapper;
+				PRODUCT_NAME = SchoolMapper;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C09F12EB1F1C39B70013BFBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 8RN8UZGBQ9;
+				INFOPLIST_FILE = SchoolMapper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mjortberg521.SchoolMapper;
+				PRODUCT_NAME = SchoolMapper;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C09F12D21F1C39B70013BFBC /* Build configuration list for PBXProject "SchoolMapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C09F12E71F1C39B70013BFBC /* Debug */,
+				C09F12E81F1C39B70013BFBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C09F12E91F1C39B70013BFBC /* Build configuration list for PBXNativeTarget "Park View" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C09F12EA1F1C39B70013BFBC /* Debug */,
+				C09F12EB1F1C39B70013BFBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C09F12CF1F1C39B70013BFBC /* Project object */;
+}
