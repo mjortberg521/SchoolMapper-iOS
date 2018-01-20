@@ -2,142 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>001</key>
-	<string>-87.851439</string>
-	<key>002</key>
-	<string>-87.851439</string>
-	<key>003</key>
-	<string>-87.851439</string>
-	<key>004</key>
-	<string>-87.851500</string>
-	<key>005</key>
-	<string>-87.851500</string>
-	<key>006</key>
-	<string>-87.851500</string>
-	<key>007</key>
-	<string>-87.851428</string>
-	<key>008</key>
-	<string>-87.850598</string>
-	<key>009</key>
-	<string>-87.850770°</string>
-	<key>010</key>
-	<string>-87.850526</string>
-	<key>011</key>
-	<string>-87.850364</string>
-	<key>012</key>
-	<string>-87.850364</string>
-	<key>013</key>
-	<string>-87.850770</string>
-	<key>014</key>
-	<string>-87.850080</string>
-	<key>015</key>
-	<string>-87.849915</string>
-	<key>016</key>
-	<string>-87.850080°</string>
-	<key>017</key>
-	<string>-87.849915°</string>
-	<key>018</key>
-	<string>-87.852099°</string>
-	<key>019</key>
-	<string>-87.849915°</string>
-	<key>020</key>
-	<string>-87.850080°</string>
-	<key>021</key>
-	<string>-87.850364°</string>
-	<key>022</key>
-	<string>-87.850526°</string>
-	<key>023</key>
-	<string>-87.850758°</string>
-	<key>024</key>
-	<string>-87.850814°</string>
-	<key>025</key>
-	<string>-87.850854°</string>
-	<key>026</key>
-	<string>-87.850896°</string>
-	<key>027</key>
-	<string>-87.850920°</string>
-	<key>028</key>
-	<string>-87.850943°</string>
-	<key>029</key>
-	<string>-87.850960°</string>
-	<key>030</key>
-	<string>-87.850960°</string>
-	<key>031</key>
-	<string>-87.851024°</string>
-	<key>032</key>
-	<string>-87.850960°</string>
-	<key>033</key>
-	<string>-87.851024°</string>
-	<key>034</key>
-	<string>-87.850648°</string>
-	<key>035</key>
-	<string>-87.851428°</string>
-	<key>036</key>
-	<string>-87.851428°</string>
-	<key>037</key>
-	<string>-87.851578°</string>
-	<key>038</key>
-	<string>-87.851642°</string>
-	<key>039</key>
-	<string>-87.851687°</string>
-	<key>040</key>
-	<string>-87.851731°</string>
-	<key>041</key>
-	<string>-87.851778°</string>
-	<key>042</key>
-	<string>-87.851807°</string>
-	<key>043</key>
-	<string>-87.851836°</string>
-	<key>044</key>
-	<string>-87.851859°</string>
-	<key>045</key>
-	<string>-87.851880°</string>
-	<key>046</key>
-	<string>-87.851896°</string>
-	<key>047</key>
-	<string>-87.852028°</string>
-	<key>048</key>
-	<string>-87.852028°</string>
-	<key>049</key>
-	<string>-87.852097°</string>
-	<key>050</key>
-	<string>-87.851428°</string>
-	<key>051</key>
-	<string>-87.851312°</string>
-	<key>052</key>
-	<string>-87.851312°</string>
-	<key>053</key>
-	<string>-87.851312°</string>
-	<key>054</key>
-	<string>-87.851312°</string>
-	<key>055</key>
-	<string>-87.851500°</string>
-	<key>056</key>
-	<string>-87.851906°</string>
-	<key>057</key>
-	<string>-87.851912°</string>
-	<key>058</key>
-	<string>-87.851915°</string>
-	<key>801</key>
-	<string>-87.850220°</string>
-	<key>711</key>
-	<string>-87.852055°</string>
-	<key>713</key>
-	<string>-87.852120°</string>
-	<key>715</key>
-	<string>-87.852155°</string>
-	<key>717</key>
-	<string>-87.852310°</string>
-	<key>712</key>
-	<string>-87.852340°</string>
-	<key>714</key>
-	<string>-87.852684°</string>
-	<key>742</key>
-	<string>-87.852740°</string>
-	<key>720</key>
-	<string>-87.852015°</string>
-	<key>710</key>
-	<string>-87.851948°</string>
 	<key>374</key>
 	<string>-87.852061</string>
 	<key>370</key>
@@ -179,35 +43,27 @@
 	<key>304</key>
 	<string>-87.851175</string>
 	<key>554</key>
-	<string>-87.851639°</string>
+	<string>-87.851639</string>
 	<key>556</key>
-	<string>-87.851890°</string>
+	<string>-87.85189</string>
 	<key>660</key>
-	<string>-87.851312°</string>
+	<string>-87.851312</string>
 	<key>665</key>
-	<string>-87.851371°</string>
+	<string>-87.851371</string>
 	<key>663</key>
-	<string>-87.851312°</string>
+	<string>-87.851312</string>
 	<key>667</key>
-	<string>-87.851371°</string>
+	<string>-87.851371</string>
 	<key>669</key>
-	<string>-87.851371°</string>
+	<string>-87.851371</string>
 	<key>661</key>
-	<string>-87.851173°</string>
+	<string>-87.851173</string>
 	<key>676</key>
-	<string>-87.851380°</string>
+	<string>-87.85138</string>
 	<key>678</key>
-	<string>-87.851263°</string>
-	<key>680</key>
-	<string>-87.851313</string>
-	<key>682</key>
-	<string>-87.851313</string>
-	<key>690</key>
-	<string>-87.851313</string>
-	<key>537</key>
-	<string>-87.851986°</string>
+	<string>-87.851263</string>
 	<key>548</key>
-	<string>-87.851500</string>
+	<string>-87.8515</string>
 	<key>628</key>
 	<string>-87.850982</string>
 	<key>626</key>
@@ -215,17 +71,17 @@
 	<key>624</key>
 	<string>-87.850749</string>
 	<key>605</key>
-	<string>-87.850770°</string>
+	<string>-87.85077</string>
 	<key>603</key>
-	<string>-87.850770°</string>
+	<string>-87.85077</string>
 	<key>621</key>
 	<string>-87.850927</string>
 	<key>620</key>
-	<string>-87.850770°</string>
+	<string>-87.85077</string>
 	<key>625</key>
 	<string>-87.851274</string>
 	<key>627</key>
-	<string>-87.851428°</string>
+	<string>-87.851428</string>
 	<key>616</key>
 	<string>-87.850795</string>
 	<key>610</key>
@@ -251,25 +107,25 @@
 	<key>191</key>
 	<string>-87.850364</string>
 	<key>160</key>
-	<string>-87.850080</string>
+	<string>-87.85008</string>
 	<key>159</key>
-	<string>-87.850080</string>
+	<string>-87.85008</string>
 	<key>158</key>
-	<string>-87.850080</string>
+	<string>-87.85008</string>
 	<key>157</key>
-	<string>-87.850080</string>
+	<string>-87.85008</string>
 	<key>156</key>
-	<string>-87.850080</string>
+	<string>-87.85008</string>
 	<key>155</key>
-	<string>-87.850080</string>
+	<string>-87.85008</string>
 	<key>154</key>
-	<string>-87.850080</string>
+	<string>-87.85008</string>
 	<key>153</key>
-	<string>-87.850080</string>
+	<string>-87.85008</string>
 	<key>152</key>
-	<string>-87.850080</string>
+	<string>-87.85008</string>
 	<key>151</key>
-	<string>-87.850080</string>
+	<string>-87.85008</string>
 	<key>120</key>
 	<string>-87.849915</string>
 	<key>119</key>
@@ -299,15 +155,15 @@
 	<key>100</key>
 	<string>-87.849915</string>
 	<key>121</key>
-	<string>-87.850080°</string>
+	<string>-87.85008</string>
 	<key>123</key>
-	<string>-87.850080°</string>
+	<string>-87.85008</string>
 	<key>128</key>
-	<string>-87.850080°</string>
+	<string>-87.85008</string>
 	<key>122</key>
-	<string>-87.850080°</string>
+	<string>-87.85008</string>
 	<key>124</key>
-	<string>-87.850080°</string>
+	<string>-87.85008</string>
 	<key>176</key>
 	<string>-87.850364</string>
 	<key>183</key>
@@ -318,5 +174,143 @@
 	<string>-87.850364</string>
 	<key>184</key>
 	<string>-87.850364</string>
+	<key>001</key>
+	<string>-87.851439</string>
+	<key>002</key>
+	<string>-87.851439</string>
+	<key>003</key>
+	<string>-87.851439</string>
+	<key>004</key>
+	<string>-87.8515</string>
+	<key>005</key>
+	<string>-87.8515</string>
+	<key>006</key>
+	<string>-87.8515</string>
+	<key>007</key>
+	<string>-87.851428</string>
+	<key>008</key>
+	<string>-87.850598</string>
+	<key>009</key>
+	<string>-87.85077</string>
+	<key>010</key>
+	<string>-87.850526</string>
+	<key>011</key>
+	<string>-87.850364</string>
+	<key>012</key>
+	<string>-87.850364</string>
+	<key>013</key>
+	<string>-87.85077</string>
+	<key>014</key>
+	<string>-87.85008</string>
+	<key>015</key>
+	<string>-87.849915</string>
+	<key>016</key>
+	<string>-87.85008</string>
+	<key>017</key>
+	<string>-87.849915</string>
+	<key>018</key>
+	<string>-87.852099</string>
+    <key>019</key>
+    <string>-87.849915</string>
+    <key>020</key>
+    <string>-87.85008</string>
+    <key>021</key>
+    <string>-87.850364</string>
+    <key>022</key>
+    <string>-87.850526</string>
+    <key>023</key>
+    <string>-87.850758</string>
+    <key>024</key>
+    <string>-87.850814</string>
+    <key>025</key>
+    <string>-87.850854</string>
+    <key>026</key>
+    <string>-87.850896</string>
+    <key>027</key>
+    <string>-87.85092</string>
+    <key>028</key>
+    <string>-87.850943</string>
+    <key>029</key>
+    <string>-87.85096</string>
+    <key>030</key>
+    <string>-87.85096</string>
+    <key>031</key>
+    <string>-87.851024</string>
+    <key>032</key>
+    <string>-87.85096</string>
+    <key>033</key>
+    <string>-87.851024</string>
+    <key>034</key>
+    <string>-87.850648</string>
+	<key>035</key>
+	<string>-87.851428</string>
+	<key>036</key>
+	<string>-87.851428</string>
+	<key>037</key>
+	<string>-87.851578</string>
+	<key>038</key>
+	<string>-87.851642</string>
+	<key>039</key>
+	<string>-87.851687</string>
+	<key>040</key>
+	<string>-87.851731</string>
+	<key>041</key>
+	<string>-87.851778</string>
+	<key>042</key>
+	<string>-87.851807</string>
+	<key>043</key>
+	<string>-87.851836</string>
+	<key>044</key>
+	<string>-87.851859</string>
+	<key>045</key>
+	<string>-87.85188</string>
+	<key>046</key>
+	<string>-87.851896</string>
+	<key>047</key>
+	<string>-87.852028</string>
+	<key>048</key>
+	<string>-87.852028</string>
+	<key>049</key>
+	<string>-87.852097</string>
+	<key>050</key>
+	<string>-87.851428</string>
+	<key>051</key>
+	<string>-87.851312</string>
+	<key>052</key>
+	<string>-87.851312</string>
+	<key>053</key>
+	<string>-87.851312</string>
+	<key>054</key>
+	<string>-87.851312</string>
+	<key>055</key>
+	<string>-87.8515</string>
+	<key>056</key>
+	<string>-87.851906</string>
+	<key>057</key>
+	<string>-87.851912</string>
+	<key>058</key>
+	<string>-87.851915</string>
+    <key>801</key>
+    <string>-87.85022</string>
+	<key>711</key>
+	<string>-87.852055</string>
+	<key>713</key>
+	<string>-87.85212</string>
+	<key>715</key>
+	<string>-87.852155</string>
+	<key>717</key>
+	<string>-87.85231</string>
+	<key>712</key>
+	<string>-87.85234</string>
+	<key>714</key>
+	<string>-87.852684</string>
+	<key>742</key>
+	<string>-87.85274</string>
+	<key>537</key>
+	<string>-87.851986</string>
+	<key>720</key>
+	<string>-87.852015</string>
+	<key>710</key>
+	<string>-87.851948</string>
 </dict>
 </plist>
