@@ -90,6 +90,8 @@ class mapViewController: UIViewController {
             // prevents strange infinite loop case
             self.mapView.camera.altitude = 1800.00 as? CLLocationDistance ?? CLLocationDistance()
             modifyingMap = false
+            //githubsuckswithxcode
+            
         }
     }
 }
