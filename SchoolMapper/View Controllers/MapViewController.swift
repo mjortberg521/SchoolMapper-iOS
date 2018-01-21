@@ -82,6 +82,21 @@ class mapViewController: UIViewController {
         DestViewController.distanceInFeet = distance
 
     }
+    
+        // enforce minimum zoom level
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        
+        var modifyingMap = Bool()
+        if self.mapView.camera.altitude > 1800.00 && !modifyingMap {
+            modifyingMap = true
+            print(modifyingMap)
+            // prevents strange infinite loop case
+            self.mapView.camera.altitude = 1800.00 as? CLLocationDistance ?? CLLocationDistance()
+            modifyingMap = false
+            //githubsuckswithxcode
+            
+        }
+    }
 }
 
 //MKMapViewDelegate
