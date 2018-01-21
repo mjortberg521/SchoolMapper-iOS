@@ -12,7 +12,7 @@
         <!--Source Dest View Controller-->
         <scene sceneID="Nxq-bm-xbg">
             <objects>
-                <viewController id="1Ho-wF-YOa" userLabel="Source Dest View Controller" customClass="SourceDestViewController" customModule="Park_View" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1Ho-wF-YOa" userLabel="Source Dest View Controller" customClass="SourceDestViewController" customModule="SchoolMapper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iaS-gT-zOW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,7 +90,7 @@
         <!--Map View Controller-->
         <scene sceneID="bVF-y9-7N6">
             <objects>
-                <viewController id="Q14-2O-Xsm" customClass="mapViewController" customModule="Park_View" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q14-2O-Xsm" customClass="mapViewController" customModule="SchoolMapper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zfS-5E-52N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -143,7 +143,7 @@
         <!--Steps View Controller-->
         <scene sceneID="9NZ-TT-e71">
             <objects>
-                <tableViewController id="jyA-6e-ODN" customClass="StepsViewController" customModule="Park_View" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="jyA-6e-ODN" customClass="StepsViewController" customModule="SchoolMapper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cTV-Gh-4Yx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

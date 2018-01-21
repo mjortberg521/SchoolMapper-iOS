@@ -100,7 +100,7 @@ extension mapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is SchoolMapOverlay {
-            return SchoolMapOverlayView(overlay: overlay, overlayImage: #imageLiteral(resourceName: "GBS"))
+            return SchoolMapOverlayView(overlay: overlay, overlayImage: #imageLiteral(resourceName: "GBSF1"))
         } else if overlay is MKPolyline {
             let lineView = MKPolylineRenderer(overlay: overlay)
             lineView.strokeColor = UIColor(red:0.2, green:0.48, blue:1.00, alpha:1.0)
@@ -112,8 +112,6 @@ extension mapViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-        //pin.animatesDrop = true
-        //pin.pinTintColor = UIColor.red
         pin.canShowCallout = true
         
         return pin
