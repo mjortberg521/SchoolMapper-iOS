@@ -68,6 +68,7 @@ class mapViewController: UIViewController {
         let myPolyline = MKPolyline(coordinates: coords, count: coords.count)
         mapView.add(myPolyline)
         
+        //lastCoordName is recieved from the previous view controller - we don't have the graph in this vc and can't use node.name
         let pin = CustomPin(coordinate: endPoint, title: lastCoordName)//uses lastCoordName from previous vc (insead of looking up name of last node given coord)
         mapView.addAnnotation(pin)
         mapView.selectAnnotation(pin, animated: true)

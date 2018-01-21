@@ -1,4 +1,4 @@
 # SchoolMapper
 Indoor navigation application for Glenbrook South High School written in Swift
 
-![alt text](/excel-plist-data/Glenbrook_South_Logo.jpg "")
+![alt text](/https://i.imgur.com/DwBFnP4.png "")
