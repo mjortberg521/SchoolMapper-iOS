@@ -21,14 +21,11 @@ class mapViewController: UIViewController {
         
     }
     
-    override func viewWillDisappear(_ animated : Bool) {
+    override func viewWillDisappear(_ animated : Bool) { //triggered when user begins swipe pan left gesture
         super.viewWillDisappear(animated)
         
         if self.isMovingFromParentViewController {
             print("MOVING BACKWARD")
-            //let overlays = mapView.overlays
-            //mapView.removeOverlays(overlays)
-            
             
             for overlayToRemove in mapView.overlays {
                 if type(of: overlayToRemove) == MKPolyline.self {
@@ -81,6 +78,19 @@ class mapViewController: UIViewController {
         var DestViewController = segue.destination as! StepsViewController
         DestViewController.distanceInFeet = distance
 
+    }
+    
+    // enforce minimum zoom level
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        
+        var modifyingMap = Bool()
+        if self.mapView.camera.altitude > 1800.00 && !modifyingMap {
+            modifyingMap = true
+            print(modifyingMap)
+            // prevents strange infinite loop case
+            self.mapView.camera.altitude = 1800.00 as? CLLocationDistance ?? CLLocationDistance()
+            modifyingMap = false
+        }
     }
 }
 
