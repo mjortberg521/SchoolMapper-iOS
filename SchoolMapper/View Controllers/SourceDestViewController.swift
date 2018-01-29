@@ -115,16 +115,16 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
         let node661 = MyNode(name: "661")
         let node676 = MyNode(name: "676")
         let node678 = MyNode(name: "678")
-        let node680 = MyNode(name: "680")
-        let node682 = MyNode(name: "682")
-        let node690 = MyNode(name: "690")
+        let node680 = MyNode(name: "680")//
+        let node682 = MyNode(name: "682")//
+        let node690 = MyNode(name: "690")//
         let node548 = MyNode(name: "548")
         let node628 = MyNode(name: "628")
         let node626 = MyNode(name: "626")
         let node624 = MyNode(name: "624")
         
         //let nodeBookstore = MyNode(name: "Bookstore") -get numbers
-        //let nodeTestCenter = MyNode(name: "TestCenter")
+        let node600 = MyNode(name: "600")
         
         let node605 = MyNode(name: "605")
         let node603 = MyNode(name: "603")
@@ -264,7 +264,7 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
         let node710 = MyNode(name: "710")
         
         
-        myGraph.add([node374, node370, node368, node366, node362, node360, node333, node331, node332, node339, node340, node341, node344, node345, node348, node349, node320, node316, node312, node304, node554, node556, node660, node665, node663, node667, node669, node661, node676, node678, node680, node682, node690, node548, node628, node626, node624, /*nodeBookstore, nodeTestCenter, */ node605, node603, node621, node620, node625, node627, node616, node610, node609, node607, node198, node199, node197, node194, node195, node193, node190, node191, node160, node159, node158, node157, node156, node155, node154, node153, node152, node151, node120, node119, node118, node117, node116, node112, node111, node110, node109, node108, node107, node103, node101, node100, node121, node123, node128, node122, node124, node176, node183, node181, node182, node184, node141, node142, node140, node138, node139, node135, node133, node167, node166, node164, node162, node001, node002, node003, node004, node005, node006, node007, node008, node009, node010, node011, node012, node013, node014, node015, node016, node017, node018, node019, node020, node021, node022, node023, node024, node025, node026, node027, node028, node029, node030, node031, node032, node033, node034, node035, node036, node037, node038, node039, node040, node041, node042, node043, node044, node045, node046, node047, node048, node049, node050, node051, node052, node053, node054, node055, node056, node057, node058, node801, node711, node713, node715, node717, node712, node714, node742, node537, node720, node710
+        myGraph.add([node374, node370, node368, node366, node362, node360, node333, node331, node332, node339, node340, node341, node344, node345, node348, node349, node320, node316, node312, node304, node554, node556, node660, node665, node663, node667, node669, node661, node676, node678, node680, node682, node690, node548, node628, node626, node624, /*nodeBookstore*/ node600,  node605, node603, node621, node620, node625, node627, node616, node610, node609, node607, node198, node199, node197, node194, node195, node193, node190, node191, node160, node159, node158, node157, node156, node155, node154, node153, node152, node151, node120, node119, node118, node117, node116, node112, node111, node110, node109, node108, node107, node103, node101, node100, node121, node123, node128, node122, node124, node176, node183, node181, node182, node184, node141, node142, node140, node138, node139, node135, node133, node167, node166, node164, node162, node001, node002, node003, node004, node005, node006, node007, node008, node009, node010, node011, node012, node013, node014, node015, node016, node017, node018, node019, node020, node021, node022, node023, node024, node025, node026, node027, node028, node029, node030, node031, node032, node033, node034, node035, node036, node037, node038, node039, node040, node041, node042, node043, node044, node045, node046, node047, node048, node049, node050, node051, node052, node053, node054, node055, node056, node057, node058, node801, node711, node713, node715, node717, node712, node714, node742, node537, node720, node710
             ])
         
         var feet:(Double, String)! //repairing graph
@@ -273,33 +273,74 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
             print(x)
             
             var source_longitude:Double! //this if statement is now working-------------------------------
-            if let path = Bundle.main.path(forResource: "Longitudes", ofType: "plist"), let longitudes = NSDictionary(contentsOfFile: path) as? [String: AnyObject] { //used to be AnyObject
-                source_longitude = (longitudes[x])?.doubleValue //longitudes is the dict from the plist
-                print(source_longitude) //works
-            }
-            
             var source_latitude:Double!
-            if let path = Bundle.main.path(forResource: "Latitudes", ofType: "plist"), let latitudes = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-                source_latitude = (latitudes[x])?.doubleValue
+            if let path = Bundle.main.path(forResource: "Longitudes_first", ofType: "plist"), let longitudes_first = NSDictionary(contentsOfFile: path) as? [String: AnyObject] { //used to be AnyObject
+                 //longitudes is the dict from the plist
+                
+                
+                if let path = Bundle.main.path(forResource: "Latitudes_first", ofType: "plist"), let latitudes_first = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+                    
+                    if latitudes_first.keys.contains(x) {
+                        source_latitude = (latitudes_first[x])?.doubleValue
+                        source_longitude = (longitudes_first[x])?.doubleValue
+                        
+                        print(source_latitude)
+                        print(source_longitude)
+                    }
+                    
+                    else {
+                        if let path = Bundle.main.path(forResource: "Longitudes_second", ofType: "plist"), let longitudes_second = NSDictionary(contentsOfFile: path) as? [String: AnyObject] { //used to be AnyObject
+                            //longitudes is the dict from the plist
+                            print(source_longitude) //works
+                            
+                            if let path = Bundle.main.path(forResource: "Latitudes_second", ofType: "plist"), let latitudes_second = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+                                
+                                source_latitude = (latitudes_second[x])?.doubleValue
+                                source_longitude = (longitudes_second[x])?.doubleValue
+                            }
+                        }
+                    }
             }
-
-            for node in array{ //iterate over the list of neighbors
+        }
+            
+        
+            for node in array { //iterate over the list of neighbors
                 let y = node.getName() //get the name of the node, convert to int, and look up in lat/long dict
                 
                 var dest_longitude:Double! //these must all be nested
-                if let path = Bundle.main.path(forResource: "Longitudes", ofType: "plist"), let longitudes = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-                    dest_longitude = (longitudes[y])?.doubleValue //get the longitude of the source
+                var dest_latitude:Double!
+                
+                if let path = Bundle.main.path(forResource: "Longitudes_first", ofType: "plist"), let longitudes_first = NSDictionary(contentsOfFile: path) as? [String: AnyObject] { //used to be AnyObject
+                    //longitudes is the dict from the plist
                     
-                    var dest_latitude:Double!
-                    if let path = Bundle.main.path(forResource: "Latitudes", ofType: "plist"), let latitudes = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-                        dest_latitude = (latitudes[y])?.doubleValue//get the latitude of the source
+                    if let path = Bundle.main.path(forResource: "Latitudes_first", ofType: "plist"), let latitudes_first = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
                         
-                        feet = (distance(lat1: Double(source_latitude!), lon1: Double(source_longitude!), lat2: Double(dest_latitude!), lon2: Double(dest_longitude!), unit: "ft"), "feet")
-                        sourceNode.addConnection(to: node, weight: feet.0) //add the connection with the distance in feet as the weights
+                        if latitudes_first.keys.contains(y) {
+                            dest_latitude = (latitudes_first[y])?.doubleValue
+                            print(dest_latitude)///////////////
+                            dest_longitude = (longitudes_first[y])?.doubleValue
+                            print(dest_longitude)////////////////
+                            
+                            feet = (distance(lat1: Double(source_latitude!), lon1: Double(source_longitude!), lat2: Double(dest_latitude!), lon2: Double(dest_longitude!), unit: "ft"), "feet")
+                            sourceNode.addConnection(to: node, weight: feet.0) //add the connection with the distance in feet as the weightso
+                        }
+                            
+                        else {
+                            if let path = Bundle.main.path(forResource: "Longitudes_second", ofType: "plist"), let longitudes_second = NSDictionary(contentsOfFile: path) as? [String: AnyObject] { //used to be AnyObject
+                                //longitudes is the dict from the plist
+                                
+                                if let path = Bundle.main.path(forResource: "Latitudes_second", ofType: "plist"), let latitudes_second = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+                                    
+                                    dest_latitude = (latitudes_second[y])?.doubleValue
+                                    dest_longitude = (longitudes_second[y])?.doubleValue
+                                }
+                            }
+                        }
                     }
                 }
+                                    
             }
-        }
+        } //end addNeighbors
         
         //SETUP THE GRAPH
         var neighbors_dict = [MyNode: [MyNode]]()
@@ -448,6 +489,7 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
                           node742: [node714, node049],
                           node710: [node058, node720],
                           node720: [node058, node710],
+                          //add red here
                           node660: [node667, node052, node053],
                           node665: [node053],
                           node663: [node051, node053],
@@ -456,10 +498,12 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
                           node661: [node053],
                           node676: [node669, node054],
                           node678: [node054, node052],
+                          //add red here
         ]
         
         for (node,neighbors) in neighbors_dict {
             addNeighbors(sourceNode: node, array: neighbors)
+            print(neighbors)
         }
         
         super.viewDidLoad()
@@ -468,12 +512,16 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
         destTextField.delegate = self
     }
 
-    //var path = [MyNode]()
     var routeName = String()
     var nodeNameDict = [String: MyNode]() //dict used to lookup start/end MyNodes from text field string
-    var points = [String]()
+
     var distance = Int()
     var lastCoordName = String()
+    
+    var firstFloorPoints = [String]()
+    var secondFloorPoints = [String]()
+    
+    var movement = String() //variable used to determine whether the user is staying on one floor, moving upstairs, or moving downstairs
     
     @IBAction func goButtonClicked(_ sender: UIButton) {
         myGraph.nodes!.flatMap({ $0 as? MyNode}).forEach { node in //run through myGraph
@@ -481,15 +529,19 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
         }
         
         if nodeNameDict[destTextField.text!] != nil && nodeNameDict[sourceTextField.text!] != nil{ //check if the entries are valid
-            points.removeAll() //must reset this to empty arr, prevents inclusion of previous routes------------------------------------------------------------------------
+            firstFloorPoints.removeAll() //must reset these to empty arrs, prevents inclusion of previous routes
+            secondFloorPoints.removeAll()
+            
             var sourceNode:MyNode! = nodeNameDict[sourceTextField.text!] //use the text to lookup the sourcenode--string must be the nodename
             var destNode:MyNode! = nodeNameDict[destTextField.text!]
             
             var routePath = myGraph.findPath(from: sourceNode, to: destNode) //find the path with builtin GK findPath func
+            var firstFloorPath = [MyNode]()
+            var secondFloorPath = [MyNode]()
             
+            print("RPRP")
             print(routePath) //this array is not empty, it contains myNode types
-            distance = feetCost(for: routePath) //get the cost of the entire route
-            
+            distance = feetCost(for: routePath) //get the cost of the entire route--works
             
             routeName = sourceTextField.text! + "-" + destTextField.text! //see override func below
             lastCoordName = destTextField.text!
@@ -502,41 +554,96 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
                 
                 array.flatMap({ $0 as? MyNode}).forEach { node in
                     
-                    let z = node.getName()
-                    print(z)
+                    let z = node.getName() //name is used to lookup lat/long
                     
                     var nodeLatitude:Double!
-                    if let path = Bundle.main.path(forResource: "Latitudes", ofType: "plist"), let latitudes = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-                        nodeLatitude = (latitudes[z])?.doubleValue
-                    }
+                    var nodeLongitude:Double!
                     
-                    var nodeLongitude:Double! //must be taken as a double
-                    if let path = Bundle.main.path(forResource: "Longitudes", ofType: "plist"), let longitudes = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-                        nodeLongitude = (longitudes[z])?.doubleValue
+                    if let path = Bundle.main.path(forResource: "Latitudes_first", ofType: "plist"), let latitudes_first = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+                        if let path = Bundle.main.path(forResource: "Latitudes_second", ofType: "plist"), let latitudes_second = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+                            if let path = Bundle.main.path(forResource: "Longitudes_first", ofType: "plist"), let longitudes_first = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+                                if let path = Bundle.main.path(forResource: "Longitudes_second", ofType: "plist"), let longitudes_second = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+                                    
+                                    if latitudes_first.keys.contains(z) {
+                                        firstFloorPath.append(node)
+                                        nodeLatitude = (latitudes_first[z])?.doubleValue
+                                        nodeLongitude = (longitudes_first[z])?.doubleValue
+                                        
+                                        print(nodeLatitude)
+                                        print(nodeLongitude)
+                                        
+                                        var coordString:String = "{"+String(nodeLatitude!)+","
+                                        coordString+=String(nodeLongitude!)+"}"  //must have !
+                                        firstFloorPoints.append(coordString) //contains an array of strings (coordinates)
+                                    }
+                                        
+                                    else{
+                                        secondFloorPath.append(node)
+                                        nodeLatitude = (latitudes_second[z])?.doubleValue
+                                        nodeLongitude = (longitudes_second[z])?.doubleValue
+                                        
+                                        var coordString:String = "{"+String(nodeLatitude!)+","
+                                        coordString+=String(nodeLongitude!)+"}"  //must have !
+                                        secondFloorPoints.append(coordString) //contains an array of strings (coordinates)
+                                        
+                                    }
+                                }
+                            }
+                        }
                     }
-                    
-                    var coordString:String = "{"+String(nodeLatitude!)+","
-                    coordString+=String(nodeLongitude!)+"}"  //must have !
-                    points.append(coordString)
                 }
-            }
+                
+                if firstFloorPoints.isEmpty == false && secondFloorPoints.isEmpty == true {
+                    movement = "first"
+                }
+                
+                else if firstFloorPoints.isEmpty == true && secondFloorPoints.isEmpty == false {
+                    movement = "second"
+                }
+                
+                else if let path = Bundle.main.path(forResource: "Latitudes_first", ofType: "plist"), let latitudes_first = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+                     if let path = Bundle.main.path(forResource: "Latitudes_second", ofType: "plist"), let latitudes_second = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+                        //var firstNode:MyNode!
+                        //firstNode = array[0] as! MyNode
+                        
+                        //var lastNode:MyNode!
+                        //lastNode = array[array.count-1] as! MyNode
+                        
+                        if latitudes_first.keys.contains(sourceTextField.text!) && latitudes_second.keys.contains(destTextField.text!) { //lastNode.getName()
+                            //if you start on the first floor and end on the second floor
+                            movement = "moving_upstairs"
+                        }
+                            
+                        else if latitudes_second.keys.contains(sourceTextField.text!) && latitudes_first.keys.contains(destTextField.text!) {
+                            //if you start on the second floor and end on the first floor
+                            movement = "moving_downstairs"
+                        }
+                    }
+                }
+            } //these are all good
             
-            makeRoutePoints(array:routePath) //changes the array "points"
+            makeRoutePoints(array:routePath) //changes the array firstFloorPoints
+            print("firstfloorpoints")
+            print(firstFloorPoints)
+
             errorMessage.text = nil
             performSegue(withIdentifier: "segueOptions", sender: self) //name of the identifier is "segueOptions"
         }
+            
         else if nodeNameDict[destTextField.text!] == nil || nodeNameDict[sourceTextField.text!] == nil{
             errorMessage.text = "Error: Enter a correct start and end point" //change the text of the error label
         }
-    }
+        
+    } //end of goButton action
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Pass information along
         var DestViewController = segue.destination as! mapViewController
         DestViewController.routeName = routeName //used as nav title in next vc
-        DestViewController.points = points
+        DestViewController.firstFloorPoints = firstFloorPoints
+        DestViewController.secondFloorPoints = secondFloorPoints
+        DestViewController.movement = movement
         DestViewController.distance = distance
-        DestViewController.lastCoordName = lastCoordName
     }
  
     //MARK: UITextFieldDelegate

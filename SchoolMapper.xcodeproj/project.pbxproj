@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F3986C220028A8D006E5EA8 /* Latitudes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F39C72720010C6C0032C30A /* Latitudes.plist */; };
-		9F3986C320028A8D006E5EA8 /* Longitudes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F39C725200055B10032C30A /* Longitudes.plist */; };
+		9F3986C220028A8D006E5EA8 /* Latitudes_first.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F39C72720010C6C0032C30A /* Latitudes_first.plist */; };
+		9F3986C320028A8D006E5EA8 /* Longitudes_first.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F39C725200055B10032C30A /* Longitudes_first.plist */; };
 		9F6266C7201167BD00404E5A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266C6201167BD00404E5A /* MapViewController.swift */; };
 		9F6266C9201168CD00404E5A /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266C8201168CD00404E5A /* School.swift */; };
 		9F6266CB2011695500404E5A /* SchoolMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266CA2011695500404E5A /* SchoolMapOverlay.swift */; };
 		9F6266CD201169AF00404E5A /* SchoolMapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266CC201169AF00404E5A /* SchoolMapOverlayView.swift */; };
 		9F6B51231FF01879009051F4 /* GBS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F6B51221FF01879009051F4 /* GBS.plist */; };
 		9F7B79991FF2C216000C24BB /* SourceDestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B79981FF2C216000C24BB /* SourceDestViewController.swift */; };
-		9F8FF9CA2012736300527074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8FF9C92012736300527074 /* Assets.xcassets */; };
+		9F8493482016DBC8004E6E71 /* firstFloorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8493472016DBC7004E6E71 /* firstFloorViewController.swift */; };
+		9F84934A2016DC86004E6E71 /* secondFloorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8493492016DC86004E6E71 /* secondFloorViewController.swift */; };
+		9FC98CEB20185CAA00505ACB /* Latitudes_second.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FC98CEA20185CAA00505ACB /* Latitudes_second.plist */; };
+		9FC98CED20185D3200505ACB /* Longitudes_second.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FC98CEC20185D3200505ACB /* Longitudes_second.plist */; };
+		9FC98CF3201E563B00505ACB /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC98CF2201E563B00505ACB /* Annotations.swift */; };
+		9FC98CF5201E620500505ACB /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC98CF4201E620500505ACB /* AnnotationView.swift */; };
+		9FC98CF7201ED01800505ACB /* AssetsNew.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC98CF6201ED01800505ACB /* AssetsNew.xcassets */; };
 		9FE7AB621FF554C800BD93B9 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7AB611FF554C800BD93B9 /* StepsViewController.swift */; };
 		C09F12DB1F1C39B70013BFBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09F12DA1F1C39B70013BFBC /* AppDelegate.swift */; };
 		C09F12E01F1C39B70013BFBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09F12DE1F1C39B70013BFBC /* Main.storyboard */; };
@@ -23,15 +29,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F39C725200055B10032C30A /* Longitudes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Longitudes.plist; sourceTree = "<group>"; };
-		9F39C72720010C6C0032C30A /* Latitudes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Latitudes.plist; sourceTree = "<group>"; };
+		9F39C725200055B10032C30A /* Longitudes_first.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Longitudes_first.plist; sourceTree = "<group>"; };
+		9F39C72720010C6C0032C30A /* Latitudes_first.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Latitudes_first.plist; sourceTree = "<group>"; };
 		9F6266C6201167BD00404E5A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9F6266C8201168CD00404E5A /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		9F6266CA2011695500404E5A /* SchoolMapOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMapOverlay.swift; sourceTree = "<group>"; };
 		9F6266CC201169AF00404E5A /* SchoolMapOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMapOverlayView.swift; sourceTree = "<group>"; };
 		9F6B51221FF01879009051F4 /* GBS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GBS.plist; sourceTree = "<group>"; };
 		9F7B79981FF2C216000C24BB /* SourceDestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDestViewController.swift; sourceTree = "<group>"; };
-		9F8FF9C92012736300527074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		9F8493472016DBC7004E6E71 /* firstFloorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstFloorViewController.swift; sourceTree = "<group>"; };
+		9F8493492016DC86004E6E71 /* secondFloorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondFloorViewController.swift; sourceTree = "<group>"; };
+		9FC98CEA20185CAA00505ACB /* Latitudes_second.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Latitudes_second.plist; sourceTree = "<group>"; };
+		9FC98CEC20185D3200505ACB /* Longitudes_second.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Longitudes_second.plist; sourceTree = "<group>"; };
+		9FC98CF2201E563B00505ACB /* Annotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotations.swift; sourceTree = "<group>"; };
+		9FC98CF4201E620500505ACB /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
+		9FC98CF6201ED01800505ACB /* AssetsNew.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsNew.xcassets; sourceTree = "<group>"; };
 		9FE7AB611FF554C800BD93B9 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 		C09F12D71F1C39B70013BFBC /* SchoolMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09F12DA1F1C39B70013BFBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9FC98CF1201E561400505ACB /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				9FC98CF2201E563B00505ACB /* Annotations.swift */,
+				9FC98CF4201E620500505ACB /* AnnotationView.swift */,
+			);
+			path = Annotations;
+			sourceTree = "<group>";
+		};
 		C09F12CE1F1C39B70013BFBC = {
 			isa = PBXGroup;
 			children = (
@@ -72,11 +93,12 @@
 			children = (
 				C09F12EC1F1C40D60013BFBC /* School Information */,
 				C09F130B1F1C47960013BFBC /* Models */,
+				9FC98CF1201E561400505ACB /* Annotations */,
 				C09F130E1F1C47990013BFBC /* Overlays */,
 				C09F12FA1F1C40D60013BFBC /* View Controllers */,
 				C09F12DA1F1C39B70013BFBC /* AppDelegate.swift */,
 				C09F12DE1F1C39B70013BFBC /* Main.storyboard */,
-				9F8FF9C92012736300527074 /* Assets.xcassets */,
+				9FC98CF6201ED01800505ACB /* AssetsNew.xcassets */,
 				C09F12E31F1C39B70013BFBC /* LaunchScreen.storyboard */,
 				C09F12E61F1C39B70013BFBC /* Info.plist */,
 			);
@@ -86,8 +108,10 @@
 		C09F12EC1F1C40D60013BFBC /* School Information */ = {
 			isa = PBXGroup;
 			children = (
-				9F39C72720010C6C0032C30A /* Latitudes.plist */,
-				9F39C725200055B10032C30A /* Longitudes.plist */,
+				9F39C72720010C6C0032C30A /* Latitudes_first.plist */,
+				9FC98CEA20185CAA00505ACB /* Latitudes_second.plist */,
+				9F39C725200055B10032C30A /* Longitudes_first.plist */,
+				9FC98CEC20185D3200505ACB /* Longitudes_second.plist */,
 				9F6B51221FF01879009051F4 /* GBS.plist */,
 			);
 			path = "School Information";
@@ -98,6 +122,8 @@
 			children = (
 				9F7B79981FF2C216000C24BB /* SourceDestViewController.swift */,
 				9F6266C6201167BD00404E5A /* MapViewController.swift */,
+				9F8493472016DBC7004E6E71 /* firstFloorViewController.swift */,
+				9F8493492016DC86004E6E71 /* secondFloorViewController.swift */,
 				9FE7AB611FF554C800BD93B9 /* StepsViewController.swift */,
 			);
 			path = "View Controllers";
@@ -178,11 +204,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F3986C220028A8D006E5EA8 /* Latitudes.plist in Resources */,
-				9F3986C320028A8D006E5EA8 /* Longitudes.plist in Resources */,
+				9F3986C220028A8D006E5EA8 /* Latitudes_first.plist in Resources */,
+				9F3986C320028A8D006E5EA8 /* Longitudes_first.plist in Resources */,
+				9FC98CF7201ED01800505ACB /* AssetsNew.xcassets in Resources */,
+				9FC98CED20185D3200505ACB /* Longitudes_second.plist in Resources */,
 				C09F12E51F1C39B70013BFBC /* LaunchScreen.storyboard in Resources */,
 				C09F12E01F1C39B70013BFBC /* Main.storyboard in Resources */,
-				9F8FF9CA2012736300527074 /* Assets.xcassets in Resources */,
+				9FC98CEB20185CAA00505ACB /* Latitudes_second.plist in Resources */,
 				9F6B51231FF01879009051F4 /* GBS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,10 +224,14 @@
 			files = (
 				9F7B79991FF2C216000C24BB /* SourceDestViewController.swift in Sources */,
 				9F6266CB2011695500404E5A /* SchoolMapOverlay.swift in Sources */,
+				9FC98CF3201E563B00505ACB /* Annotations.swift in Sources */,
+				9F8493482016DBC8004E6E71 /* firstFloorViewController.swift in Sources */,
 				9FE7AB621FF554C800BD93B9 /* StepsViewController.swift in Sources */,
+				9FC98CF5201E620500505ACB /* AnnotationView.swift in Sources */,
 				C09F12DB1F1C39B70013BFBC /* AppDelegate.swift in Sources */,
 				9F6266CD201169AF00404E5A /* SchoolMapOverlayView.swift in Sources */,
 				9F6266C7201167BD00404E5A /* MapViewController.swift in Sources */,
+				9F84934A2016DC86004E6E71 /* secondFloorViewController.swift in Sources */,
 				9F6266C9201168CD00404E5A /* School.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

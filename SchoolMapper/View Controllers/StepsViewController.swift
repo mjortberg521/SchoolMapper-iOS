@@ -1,9 +1,7 @@
 //
 //  StepsViewController.swift
-//  Park View
 //
 //  Created by Matthew Jortberg on 2017-12-28.
-//  Copyright © 2017 Ray Wenderlich. All rights reserved.
 //
 
 import Foundation

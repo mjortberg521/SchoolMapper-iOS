@@ -29,6 +29,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1Ho-wF-YOa" id="nHI-D3-y62"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWP-Sp-H4J">
                                 <rect key="frame" x="16" y="133" width="97" height="21"/>
@@ -95,24 +98,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="mutedStandard" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBS-jo-mcO">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <gestureRecognizers/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bG0-dp-UqZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="577"/>
                                 <connections>
-                                    <outlet property="delegate" destination="Q14-2O-Xsm" id="Ejj-8G-MxF"/>
+                                    <segue destination="Z4e-Z0-lYU" kind="embed" identifier="firstFloorContainerView" id="SUk-lr-2D8"/>
                                 </connections>
-                            </mapView>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMg-xg-siO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="577"/>
+                                <connections>
+                                    <segue destination="VzC-nU-g8b" kind="embed" identifier="secondFloorContainerView" id="tja-1a-bRv"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="08R-av-ypr">
+                                <rect key="frame" x="0.0" y="639" width="375" height="29"/>
+                                <segments>
+                                    <segment title="First Floor"/>
+                                    <segment title="Second Floor"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentSelected:" destination="Q14-2O-Xsm" eventType="valueChanged" id="hed-fc-MFe"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="pBS-jo-mcO" firstAttribute="bottom" secondItem="iUz-JQ-Cyv" secondAttribute="bottom" id="94W-1J-N9p"/>
-                            <constraint firstItem="pBS-jo-mcO" firstAttribute="trailing" secondItem="iUz-JQ-Cyv" secondAttribute="trailing" id="An4-WC-Y6W"/>
-                            <constraint firstItem="pBS-jo-mcO" firstAttribute="leading" secondItem="iUz-JQ-Cyv" secondAttribute="leading" id="RUr-QG-lhz"/>
-                            <constraint firstItem="pBS-jo-mcO" firstAttribute="trailing" secondItem="iUz-JQ-Cyv" secondAttribute="trailing" id="W68-xU-MMs"/>
-                            <constraint firstItem="pBS-jo-mcO" firstAttribute="leading" secondItem="iUz-JQ-Cyv" secondAttribute="leading" id="i1y-yM-B1M"/>
-                            <constraint firstItem="pBS-jo-mcO" firstAttribute="top" secondItem="iUz-JQ-Cyv" secondAttribute="top" id="jff-GY-NbH"/>
-                            <constraint firstItem="iUz-JQ-Cyv" firstAttribute="bottom" secondItem="pBS-jo-mcO" secondAttribute="bottom" id="o1j-k5-Zls"/>
+                            <constraint firstItem="mMg-xg-siO" firstAttribute="trailing" secondItem="bG0-dp-UqZ" secondAttribute="trailing" id="3eN-OY-xE3"/>
+                            <constraint firstAttribute="trailing" secondItem="mMg-xg-siO" secondAttribute="trailing" id="EPT-Iz-UIa"/>
+                            <constraint firstItem="mMg-xg-siO" firstAttribute="leading" secondItem="zfS-5E-52N" secondAttribute="leading" id="HHb-CX-61g"/>
+                            <constraint firstItem="mMg-xg-siO" firstAttribute="top" secondItem="bG0-dp-UqZ" secondAttribute="top" id="MAH-ng-Iwm"/>
+                            <constraint firstItem="08R-av-ypr" firstAttribute="top" secondItem="bG0-dp-UqZ" secondAttribute="bottom" constant="-2" id="WOj-0z-Lo3"/>
+                            <constraint firstItem="mMg-xg-siO" firstAttribute="trailing" secondItem="08R-av-ypr" secondAttribute="trailing" id="Wtw-Nk-gcY"/>
+                            <constraint firstItem="mMg-xg-siO" firstAttribute="leading" secondItem="bG0-dp-UqZ" secondAttribute="leading" id="nvp-zF-0fv"/>
+                            <constraint firstItem="mMg-xg-siO" firstAttribute="leading" secondItem="08R-av-ypr" secondAttribute="leading" id="pKr-RO-cBV"/>
+                            <constraint firstItem="mMg-xg-siO" firstAttribute="top" secondItem="iUz-JQ-Cyv" secondAttribute="top" id="rbB-hR-ss2"/>
+                            <constraint firstItem="08R-av-ypr" firstAttribute="top" secondItem="mMg-xg-siO" secondAttribute="bottom" constant="-2" id="ttc-nl-ePe"/>
+                            <constraint firstAttribute="bottom" secondItem="mMg-xg-siO" secondAttribute="bottom" constant="26" id="u9N-86-hVt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iUz-JQ-Cyv"/>
                         <connections>
@@ -130,7 +152,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="mapView" destination="pBS-jo-mcO" id="Sbp-k0-JeI"/>
+                        <outlet property="firstFloorView" destination="bG0-dp-UqZ" id="EAW-Q5-rtC"/>
+                        <outlet property="secondFloorView" destination="mMg-xg-siO" id="lFV-3p-qsb"/>
                         <outlet property="stepsButton" destination="2iS-a6-M5q" id="tpL-u0-rrV"/>
                         <segue destination="jyA-6e-ODN" kind="show" identifier="segueSteps" id="2xE-xj-Nm1"/>
                     </connections>
@@ -138,7 +161,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtA-Vs-5gT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="nyi-RY-wtk"/>
             </objects>
-            <point key="canvasLocation" x="1327" y="116"/>
+            <point key="canvasLocation" x="1325.5999999999999" y="115.59220389805098"/>
         </scene>
         <!--Steps View Controller-->
         <scene sceneID="9NZ-TT-e71">
@@ -153,11 +176,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="093-jn-8wC" id="TFH-ue-uSZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KmG-VW-fjf">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -175,7 +198,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMz-hp-qjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2095" y="116"/>
+            <point key="canvasLocation" x="2313" y="-818"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g3q-as-xic">
@@ -194,6 +217,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSu-5p-V0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-215" y="116"/>
+        </scene>
+        <!--firstFloorViewController-->
+        <scene sceneID="ON9-a2-oQD">
+            <objects>
+                <viewController title="firstFloorViewController" id="Z4e-Z0-lYU" customClass="firstFloorViewController" customModule="SchoolMapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x4V-pC-6zC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49N-ez-Xh0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Z4e-Z0-lYU" id="vFm-Ca-dzh"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="49N-ez-Xh0" secondAttribute="bottom" id="ErC-4c-gFv"/>
+                            <constraint firstItem="49N-ez-Xh0" firstAttribute="leading" secondItem="x4V-pC-6zC" secondAttribute="leading" id="VIx-yt-1Tg"/>
+                            <constraint firstAttribute="trailing" secondItem="49N-ez-Xh0" secondAttribute="trailing" id="Wyc-Z8-Dh8"/>
+                            <constraint firstItem="49N-ez-Xh0" firstAttribute="top" secondItem="x4V-pC-6zC" secondAttribute="top" id="sV3-fP-PeF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8VT-BU-8nr"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstFloorMapView" destination="49N-ez-Xh0" id="fuk-g6-G2l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVd-r3-Jbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2312.8000000000002" y="-188.00599700149925"/>
+        </scene>
+        <!--secondFloorViewController-->
+        <scene sceneID="fBQ-uX-z5c">
+            <objects>
+                <viewController title="secondFloorViewController" id="VzC-nU-g8b" customClass="secondFloorViewController" customModule="SchoolMapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yJH-wL-bTU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O95-4e-44g">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                                <connections>
+                                    <outlet property="delegate" destination="VzC-nU-g8b" id="DyX-71-1LZ"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="O95-4e-44g" secondAttribute="bottom" id="JaD-B0-009"/>
+                            <constraint firstAttribute="trailing" secondItem="O95-4e-44g" secondAttribute="trailing" id="OTU-w9-iuM"/>
+                            <constraint firstItem="O95-4e-44g" firstAttribute="leading" secondItem="yJH-wL-bTU" secondAttribute="leading" id="cOD-gG-PB6"/>
+                            <constraint firstItem="O95-4e-44g" firstAttribute="top" secondItem="yJH-wL-bTU" secondAttribute="top" id="xaZ-dp-v8N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sgm-Vq-h0B"/>
+                    </view>
+                    <connections>
+                        <outlet property="secondFloorMapView" destination="O95-4e-44g" id="oFX-RB-OCO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BN2-JD-LJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2312.8000000000002" y="395.80209895052479"/>
         </scene>
     </scenes>
 </document>
