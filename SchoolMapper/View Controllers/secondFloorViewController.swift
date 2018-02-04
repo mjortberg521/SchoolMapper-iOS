@@ -6,121 +6,13 @@ class secondFloorViewController: UIViewController {
     //add the secondFloorMapView from the container's child
     @IBOutlet weak var secondFloorMapView: MKMapView!
     
-    var school = School(filename: "GBS")
+    var school = School(filename: "GBSF2")
     
     var distance = Int()
     var secondFloorPoints = [String]()
     var firstFloorPoints = [String]()
     
     var movement = String()
-    
-    /*
-    override func viewWillDisappear(_ animated : Bool) { //triggered when user begins swipe pan left gesture
-        super.viewWillDisappear(animated)
-        
-        if self.isMovingFromParentViewController {
-            print("MOVING BACKWARD")
-            
-            for overlayToRemove in secondFloorMapView.overlays {
-                if type(of: overlayToRemove) == MKPolyline.self {
-                    secondFloorMapView.remove(overlayToRemove)
-                }
-            }
-        }
-    }
- */
-    
-    class CustomPin : NSObject, MKAnnotation {
-        var coordinate: CLLocationCoordinate2D
-        var title: String?
-        
-        init(coordinate: CLLocationCoordinate2D, title: String) {
-            self.coordinate = coordinate
-            self.title = title
-            
-            super.init()
-        }
-    }
-    
-    override func viewDidLoad() {
-        secondFloorMapView.showsCompass = true
-        //navigationItem.title = routeName
-        print("secondFloorPoints")
-        print(secondFloorPoints)
-        secondFloorMapView.delegate = self
-        
-        let latDelta = school.overlayTopLeftCoordinate.latitude - school.overlayBottomRightCoordinate.latitude
-        let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
-        
-        let overlay = SchoolMapOverlay(school: school)
-        secondFloorMapView.add(overlay)
-        
-        if secondFloorPoints.isEmpty == false  {
-            //get coordinates from the array of points
-            let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
-            let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
-            
-            let endPoint = coords[coords.count-1] //get the last coord
-            let region = MKCoordinateRegionMake(endPoint, span) //center the view on the endpoint lat/long
-            secondFloorMapView.region = region
-            
-            let myPolyline = MKPolyline(coordinates: coords, count: coords.count)
-            secondFloorMapView.add(myPolyline)
-            
-            //lastCoordName is recieved from the previous view controller - we don't have the graph in this vc and can't use node.name
-            let pin = CustomPin(coordinate: endPoint, title: "")
-            secondFloorMapView.addAnnotation(pin)
-            secondFloorMapView.selectAnnotation(pin, animated: true)
-        }
-        
-        else if secondFloorPoints.isEmpty == true {
-            let center = school.midCoordinate
-            let region = MKCoordinateRegionMake(center, span)
-            secondFloorMapView.region = region
-        }
-    }
-    
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Pass information along
-        var DestViewController = segue.destination as! StepsViewController
-        DestViewController.distanceInFeet = distance
-        
-    }
-    */
-    
-    // enforce minimum zoom level
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        
-        var modifyingMap = Bool()
-        if self.secondFloorMapView.camera.altitude > 1350.00 && !modifyingMap {
-            modifyingMap = true
-            print(modifyingMap)
-            //switch to max altitude and center back on endpoint
-            // prevents strange infinite loop case
-            self.secondFloorMapView.camera.altitude = 1350.00 as? CLLocationDistance ?? CLLocationDistance()
-            let latDelta = school.overlayTopLeftCoordinate.latitude - school.overlayBottomRightCoordinate.latitude
-            let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
-            
-            if secondFloorPoints.isEmpty == false {
-                let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
-                let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
-                
-                let endPoint = coords[coords.count-1] //get the last coord
-                let region = MKCoordinateRegionMake(endPoint, span) //center the view on the endpoint lat/long
-                secondFloorMapView.region = region
-            }
-                
-            else if secondFloorPoints.isEmpty == true { //if the array is empty, center the map on the school center
-                
-                let midPoint = school.midCoordinate
-                let region = MKCoordinateRegionMake(midPoint, span) //center the view on the endpoint lat/long
-                secondFloorMapView.region = region
-            }
-            
-            modifyingMap = false
-        }
-    }
     
     func addAnnotations() {
         //guard let attractions = Park.plist("MagicMountainAttractions") as? [[String : String]] else { return }
@@ -130,9 +22,9 @@ class secondFloorViewController: UIViewController {
             let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
             
             let coordinate = coords[coords.count-1] //get the last coord
-            let type = annotationType(rawValue: "destination")
+            let type = annotationType(rawValue: "destination") ?? .destination
             
-            let annotation = Annotations(coordinate: coordinate, type: type!)
+            let annotation = Annotations(coordinate: coordinate, type: type)
             secondFloorMapView.addAnnotation(annotation)
         }
             
@@ -141,9 +33,9 @@ class secondFloorViewController: UIViewController {
             let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
             
             let coordinate = coords[coords.count-1] //get the stair coordinate -- the last coord in second floor points
-            let type = annotationType(rawValue: "moving_downstairs")
+            let type = annotationType(rawValue: "moving_downstairs") ?? .moving_downstairs
             
-            let annotation = Annotations(coordinate: coordinate, type: type!)
+            let annotation = Annotations(coordinate: coordinate, type: type)
             secondFloorMapView.addAnnotation(annotation)
         }
         
@@ -152,22 +44,131 @@ class secondFloorViewController: UIViewController {
             let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
             
             let coordinate = coords[coords.count-1] //get the second floor destination coordinate -- the last coord in second floor points
-            let type = annotationType(rawValue: "destination")
+            let type = annotationType(rawValue: "destination") ?? .destination
             
-            let annotation = Annotations(coordinate: coordinate, type: type!)
+            let annotation = Annotations(coordinate: coordinate, type: type)
             secondFloorMapView.addAnnotation(annotation)
         }
-        /*
-         for attraction in attractions {
-         let coordinate = Park.parseCoord(dict: attraction, fieldName: "location")
-         //let title = attraction["name"] ?? ""
-         //let typeRawValue = Int(attraction["type"] ?? "0") ?? 0
-         let type = AttractionType(rawValue: typeRawValue) ?? .misc
-         //let subtitle = attraction["subtitle"] ?? ""
-         let annotation = Annotations(coordinate: coordinate, title: title, subtitle: subtitle, type: type)
-         mapView.addAnnotation(annotation)
-         }
-         */
+    }
+    
+    func deg2rad(deg:Double) -> Double {
+        return deg * 3.1415 / 180
+    }
+    func rad2deg(rad:Double) -> Double {
+        return rad * 180.0 / 3.1415
+    }
+    
+    //function to find the geometric center of a set of points
+    func centerCoordinate(forCoordinates coordinateArray: [CLLocationCoordinate2D]) -> CLLocationCoordinate2D {
+        
+        if coordinateArray.count == 1 { //handle the case where there is only one point-without this the span is invalid
+            return coordinateArray[0]
+        }
+        
+        else {
+            var x: Double = 0
+            var y: Double = 0
+            var z: Double = 0
+            for coordinateValue in coordinateArray {
+                let lat: Double = deg2rad(deg: coordinateValue.latitude)
+                let lon: Double = deg2rad(deg: coordinateValue.longitude)
+                
+                x += cos(lat) * cos(lon)
+                y += cos(lat) * sin(lon)
+                z += sin(lat)
+            }
+            x = x / Double(coordinateArray.count)
+            y = y / Double(coordinateArray.count)
+            z = z / Double(coordinateArray.count)
+            
+            let resultLon: Double = atan2(y, x)
+            let resultHyp: Double = sqrt(x * x + y * y)
+            let resultLat: Double = atan2(z, resultHyp)
+            let result: CLLocationCoordinate2D = CLLocationCoordinate2DMake(rad2deg(rad: resultLat), rad2deg(rad: resultLon))
+            
+            return result
+        }
+    }
+    
+    override func viewDidLoad() {
+        secondFloorMapView.showsCompass = true
+        
+        //let latDelta = school.overlayTopLeftCoordinate.latitude - school.overlayBottomRightCoordinate.latitude
+        //let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
+        
+        let overlay = SchoolMapOverlay(school: school)
+        secondFloorMapView.add(overlay)
+        
+        if secondFloorPoints.isEmpty == false  {
+            let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
+            let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
+            
+            var latDelta = Double()
+            latDelta = ((coords[(coords.count)-1]).latitude-(coords[0]).latitude)
+            latDelta+=latDelta/3 //add a slight buffer to allow viewing of space around start and end point
+            
+            var lonDelta = Double()
+            lonDelta = (coords[(coords.count)-1]).longitude-(coords[0]).longitude
+            lonDelta+=lonDelta/3
+            
+            let span = MKCoordinateSpanMake(fabs(latDelta), fabs(lonDelta)) //prev second argument 0.0
+            
+            let midPoint = centerCoordinate(forCoordinates: coords)
+            let region = MKCoordinateRegionMake(midPoint, span) //center the view on the endpoint lat/long
+            
+            secondFloorMapView.setRegion(region, animated: true)
+            
+            let myPolyline = MKPolyline(coordinates: coords, count: coords.count)
+            secondFloorMapView.add(myPolyline)
+            
+            addAnnotations()
+        }
+            
+        else if secondFloorPoints.isEmpty == true {
+            let latDelta = school.overlayTopLeftCoordinate.latitude - school.overlayBottomRightCoordinate.latitude
+            let lonDelta = school.overlayTopLeftCoordinate.longitude - school.overlayBottomRightCoordinate.longitude
+            let span = MKCoordinateSpanMake(fabs(latDelta), fabs(lonDelta)) //prev second argument 0.0
+            
+            let center = school.midCoordinate
+            let region = MKCoordinateRegionMake(center, span)
+            
+            secondFloorMapView.setRegion(region, animated: true)
+            //self.firstFloorMapView.camera.altitude = 890.00 as? CLLocationDistance ?? CLLocationDistance()
+        }
+    }
+    
+    // enforce minimum zoom level
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        
+        var modifyingMap = Bool()
+        if self.secondFloorMapView.camera.altitude > 1100.00 && !modifyingMap {
+            modifyingMap = true
+            //prevent infinite loop
+            
+            self.secondFloorMapView.camera.altitude = 1099.00 as? CLLocationDistance ?? CLLocationDistance()
+            
+            let latDelta = school.overlayTopLeftCoordinate.latitude - school.overlayBottomRightCoordinate.latitude
+            let lonDelta = school.overlayTopLeftCoordinate.longitude - school.overlayBottomRightCoordinate.longitude
+            let span = MKCoordinateSpanMake(fabs(latDelta), fabs(lonDelta)) //prev second argument 0.0
+            
+            if secondFloorPoints.isEmpty == false {
+                let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
+                let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
+                
+                let midPoint = centerCoordinate(forCoordinates: coords) //get the middle coordinate of the route
+                let region = MKCoordinateRegionMake(midPoint, span) //center the view on the endpoint lat/long
+                
+                secondFloorMapView.setRegion(region, animated: true) //setting the correct region
+            }
+                
+            else if secondFloorPoints.isEmpty == true { //if the array is empty, center the map on the school center
+                let center = school.midCoordinate
+                let region = MKCoordinateRegionMake(center, span)
+                
+                secondFloorMapView.setRegion(region, animated: true)
+            }
+            modifyingMap = false
+        }
     }
 }
 
@@ -187,16 +188,11 @@ extension secondFloorViewController: MKMapViewDelegate {
         return MKOverlayRenderer()
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        /*
-        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-        pin.canShowCallout = true
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        return pin
-        */
-        
-        let annotationView = AnnotationView(annotation: annotation, reuseIdentifier: "Attraction")
-        annotationView.canShowCallout = true
+        let annotationView = AnnotationView(annotation: annotation, reuseIdentifier: "Annotation")
+        annotationView.canShowCallout = false
         return annotationView
     }
+
 }

@@ -94,6 +94,8 @@ class mapViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var blueLabel: UILabel!
+    
     @IBAction func segmentSelected(_ sender: UISegmentedControl) {
          switch sender.selectedSegmentIndex
         {

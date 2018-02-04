@@ -248,6 +248,7 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
         let node056 = MyNode(name: "056")
         let node057 = MyNode(name: "057")
         let node058 = MyNode(name: "058")
+        let node059 = MyNode(name: "059")
         
         let node801 = MyNode(name: "801")
         //Place 800s here
@@ -263,8 +264,11 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
         let node720 = MyNode(name: "720")
         let node710 = MyNode(name: "710")
         
+        let node5001 = MyNode(name: "5001")
+        let node5002 = MyNode(name: "5002")
         
-        myGraph.add([node374, node370, node368, node366, node362, node360, node333, node331, node332, node339, node340, node341, node344, node345, node348, node349, node320, node316, node312, node304, node554, node556, node660, node665, node663, node667, node669, node661, node676, node678, node680, node682, node690, node548, node628, node626, node624, /*nodeBookstore*/ node600,  node605, node603, node621, node620, node625, node627, node616, node610, node609, node607, node198, node199, node197, node194, node195, node193, node190, node191, node160, node159, node158, node157, node156, node155, node154, node153, node152, node151, node120, node119, node118, node117, node116, node112, node111, node110, node109, node108, node107, node103, node101, node100, node121, node123, node128, node122, node124, node176, node183, node181, node182, node184, node141, node142, node140, node138, node139, node135, node133, node167, node166, node164, node162, node001, node002, node003, node004, node005, node006, node007, node008, node009, node010, node011, node012, node013, node014, node015, node016, node017, node018, node019, node020, node021, node022, node023, node024, node025, node026, node027, node028, node029, node030, node031, node032, node033, node034, node035, node036, node037, node038, node039, node040, node041, node042, node043, node044, node045, node046, node047, node048, node049, node050, node051, node052, node053, node054, node055, node056, node057, node058, node801, node711, node713, node715, node717, node712, node714, node742, node537, node720, node710
+        
+        myGraph.add([node374, node370, node368, node366, node362, node360, node333, node331, node332, node339, node340, node341, node344, node345, node348, node349, node320, node316, node312, node304, node554, node556, node660, node665, node663, node667, node669, node661, node676, node678, node680, node682, node690, node548, node628, node626, node624, /*nodeBookstore*/ node600,  node605, node603, node621, node620, node625, node627, node616, node610, node609, node607, node198, node199, node197, node194, node195, node193, node190, node191, node160, node159, node158, node157, node156, node155, node154, node153, node152, node151, node120, node119, node118, node117, node116, node112, node111, node110, node109, node108, node107, node103, node101, node100, node121, node123, node128, node122, node124, node176, node183, node181, node182, node184, node141, node142, node140, node138, node139, node135, node133, node167, node166, node164, node162, node001, node002, node003, node004, node005, node006, node007, node008, node009, node010, node011, node012, node013, node014, node015, node016, node017, node018, node019, node020, node021, node022, node023, node024, node025, node026, node027, node028, node029, node030, node031, node032, node033, node034, node035, node036, node037, node038, node039, node040, node041, node042, node043, node044, node045, node046, node047, node048, node049, node050, node051, node052, node053, node054, node055, node056, node057, node058, node059, node801, node711, node713, node715, node717, node712, node714, node742, node537, node720, node710, node5001, node5002
             ])
         
         var feet:(Double, String)! //repairing graph
@@ -435,7 +439,7 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
                           node018: [node537],
                           node019: [node020, node100],
                           node020: [node019, node121, node801],
-                          node121: [node123, node020],
+                          node121: [node123, node059],
                           node801: [node020, node021],
                           node021: [node801, node022, /*node162*/],
                           node022: [node021, node023],
@@ -480,6 +484,7 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
                           node056: [node046, node057],
                           node057: [node056, node058],
                           node058: [node057, node720, node710],
+                          node059: [node020, node5001, node121],
                           node711: [node047],
                           node713: [node049, node715],
                           node715: [node713, node717],
@@ -499,6 +504,8 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
                           node676: [node669, node054],
                           node678: [node054, node052],
                           //add red here
+                          node5001: [node059, node5002],
+                          node5002: [node5001],
         ]
         
         for (node,neighbors) in neighbors_dict {
@@ -552,7 +559,7 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate {
                 let fileManager = FileManager.default
                 let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
                 
-                array.flatMap({ $0 as? MyNode}).forEach { node in
+                array.flatMap({ $0 as? MyNode}).forEach { node in //iterate through the routePath
                     
                     let z = node.getName() //name is used to lookup lat/long
                     

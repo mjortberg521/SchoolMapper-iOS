@@ -290,6 +290,8 @@
 	<string>-87.851912</string>
 	<key>058</key>
 	<string>-87.851915</string>
+	<key>059</key>
+	<string>-87.850080°</string>
 	<key>801</key>
 	<string>-87.85022</string>
 	<key>711</key>
@@ -312,5 +314,7 @@
 	<string>-87.852015</string>
 	<key>710</key>
 	<string>-87.851948</string>
+	<key>5001</key>
+	<string>-87.850039°</string>
 </dict>
 </plist>

@@ -10,13 +10,14 @@ import UIKit
 import MapKit
 
 enum annotationType: String { //removed Int
-    case destination
+    case destination = "destination"
     case moving_downstairs
     case moving_upstairs
     
     func image() -> UIImage {
         switch self {
         case .destination:
+            print("DESTINATIONWORKING")
             return #imageLiteral(resourceName: "destination_icon")
         case .moving_downstairs:
             return #imageLiteral(resourceName: "down_stairs")
