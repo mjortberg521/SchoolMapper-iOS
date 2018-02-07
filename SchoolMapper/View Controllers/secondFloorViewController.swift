@@ -13,40 +13,32 @@ class secondFloorViewController: UIViewController {
     var firstFloorPoints = [String]()
     
     var movement = String()
+    var destinationName = String()
     
     func addAnnotations() {
-        //guard let attractions = Park.plist("MagicMountainAttractions") as? [[String : String]] else { return }
+        let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
+        let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
+        
+        let coordinate = coords[coords.count-1] //get the last coord- the annotation always needs to be placed at the end of the array
         
         if movement == "second" {
-            let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
-            let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
-            
-            let coordinate = coords[coords.count-1] //get the last coord
             let type = annotationType(rawValue: "destination") ?? .destination
             
-            let annotation = Annotations(coordinate: coordinate, type: type)
+            let annotation = Annotations(coordinate: coordinate, title: destinationName, type: type)
             secondFloorMapView.addAnnotation(annotation)
         }
             
         else if movement == "moving_downstairs" {
-            let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
-            let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
-            
-            let coordinate = coords[coords.count-1] //get the stair coordinate -- the last coord in second floor points
             let type = annotationType(rawValue: "moving_downstairs") ?? .moving_downstairs
             
-            let annotation = Annotations(coordinate: coordinate, type: type)
+            let annotation = Annotations(coordinate: coordinate, title: destinationName, type: type)
             secondFloorMapView.addAnnotation(annotation)
         }
         
         else if movement == "moving_upstairs" {
-            let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
-            let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
-            
-            let coordinate = coords[coords.count-1] //get the second floor destination coordinate -- the last coord in second floor points
             let type = annotationType(rawValue: "destination") ?? .destination
             
-            let annotation = Annotations(coordinate: coordinate, type: type)
+            let annotation = Annotations(coordinate: coordinate, title: destinationName, type: type)
             secondFloorMapView.addAnnotation(annotation)
         }
     }
@@ -182,7 +174,7 @@ extension secondFloorViewController: MKMapViewDelegate {
         } else if overlay is MKPolyline {
             let lineView = MKPolylineRenderer(overlay: overlay)
             lineView.strokeColor = UIColor(red:0.2, green:0.48, blue:1.00, alpha:1.0)
-            lineView.lineWidth = 10.0
+            lineView.lineWidth = 8.5
             return lineView
         }
         return MKOverlayRenderer()

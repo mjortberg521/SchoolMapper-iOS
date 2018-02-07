@@ -16,7 +16,7 @@ class School {
         }
     }
     
-    var overlayBoundingMapRect: MKMapRect {
+    var overlayBoundingMapRect: MKMapRect { //create a bounding rectangle for the overlay
         get {
             let topLeft = MKMapPointForCoordinate(overlayTopLeftCoordinate);
             let topRight = MKMapPointForCoordinate(overlayTopRightCoordinate);

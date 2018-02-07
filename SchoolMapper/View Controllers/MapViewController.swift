@@ -9,8 +9,6 @@ class mapViewController: UIViewController {
     @IBOutlet weak var firstFloorView: UIView!
     @IBOutlet weak var secondFloorView: UIView!
     
-    
-    
     /*
     
     private lazy var firstFloorViewController: firstFloorViewController = {
@@ -86,6 +84,7 @@ class mapViewController: UIViewController {
     var secondFloorPoints = [String]()
     
     var movement = String()
+    var destinationName = String()
     
     @IBOutlet weak var stepsButton: UIBarButtonItem!
     
@@ -95,6 +94,8 @@ class mapViewController: UIViewController {
     }
     
     @IBOutlet weak var blueLabel: UILabel!
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBAction func segmentSelected(_ sender: UISegmentedControl) {
          switch sender.selectedSegmentIndex
@@ -109,66 +110,33 @@ class mapViewController: UIViewController {
           break;
         }
     }
-    
-    //move to the container children
-    /*
-    override func viewWillDisappear(_ animated : Bool) { //triggered when user begins swipe pan left gesture
-        super.viewWillDisappear(animated)
-        
-        if self.isMovingFromParentViewController {
-            print("MOVING BACKWARD")
-            
-            for overlayToRemove in mapView.overlays {
-                if type(of: overlayToRemove) == MKPolyline.self {
-                    mapView.remove(overlayToRemove)
-                }
-            }
-        }
-    }
-    */
-    
-    /*
-    class CustomPin : NSObject, MKAnnotation {
-        var coordinate: CLLocationCoordinate2D
-        var title: String?
-        
-        init(coordinate: CLLocationCoordinate2D, title: String) {
-            self.coordinate = coordinate
-            self.title = title
-            
-            super.init()
-        }
-    }
-    */
-    
+
     override func viewDidLoad() {
-        //mapView.showsCompass = true
-        //super.viewDidLoad()
         navigationItem.title = routeName
+
+        if movement == "first" {
+            firstFloorView.isHidden = false
+            secondFloorView.isHidden = true
+            segmentedControl.selectedSegmentIndex = 0
+        }
+            
+        else if movement == "second" {
+            firstFloorView.isHidden = true
+            secondFloorView.isHidden = false
+            segmentedControl.selectedSegmentIndex = 1
+        }
+        else if movement == "moving_upstairs" {
+            firstFloorView.isHidden = false
+            secondFloorView.isHidden = true
+            segmentedControl.selectedSegmentIndex = 0
+        }
         
-        //let latDelta = school.overlayTopLeftCoordinate.latitude - school.overlayBottomRightCoordinate.latitude
-        //let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
+        else if movement == "moving_downstairs" {
+            firstFloorView.isHidden = true
+            secondFloorView.isHidden = false
+            segmentedControl.selectedSegmentIndex = 1
+        }
         
-        //let overlay = SchoolMapOverlay(school: school)
-        //mapView.add(overlay)
-        
-        //get coordinates from the array of points
-        //let cgPoints = points.map { CGPointFromString($0) }
-        //let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
-        
-        //let endPoint = coords[coords.count-1] //get the last coord
-        //let region = MKCoordinateRegionMake(endPoint, span) //center the view on the endpoint lat/long
-        //mapView.region = region
-        
-        //let myPolyline = MKPolyline(coordinates: coords, count: coords.count)
-        //mapView.add(myPolyline)
-        
-        //lastCoordName is recieved from the previous view controller - we don't have the graph in this vc and can't use node.name
-        //let pin = CustomPin(coordinate: endPoint, title: lastCoordName)//uses lastCoordName from previous vc (insead of looking up name of last node given coord)
-        //mapView.addAnnotation(pin)
-        //mapView.selectAnnotation(pin, animated: true)
-        firstFloorView.isHidden = false
-        secondFloorView.isHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -181,6 +149,7 @@ class mapViewController: UIViewController {
             
             childViewControllerFirst.distance = distance
             childViewControllerFirst.movement = movement
+            childViewControllerFirst.destinationName = destinationName
         }
         
         else if segue.identifier == "secondFloorContainerView" {
@@ -190,6 +159,7 @@ class mapViewController: UIViewController {
             
             childViewControllerSecond.distance = distance
             childViewControllerSecond.movement = movement
+            childViewControllerSecond.destinationName = destinationName
         }
         
         else if segue.identifier == "segueSteps" {

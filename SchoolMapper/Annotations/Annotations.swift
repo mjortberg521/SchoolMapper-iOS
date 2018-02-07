@@ -29,13 +29,13 @@ enum annotationType: String { //removed Int
 
 class Annotations: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
-    //var title: String?
+    var title: String?
     //var subtitle: String?
     var type: annotationType
     
-    init(coordinate: CLLocationCoordinate2D, /*title: String, subtitle: String, */type: annotationType) {
+    init(coordinate: CLLocationCoordinate2D, title: String, /*subtitle: String, */type: annotationType) {
         self.coordinate = coordinate
-        //self.title = title
+        self.title = title
         //self.subtitle = subtitle
         self.type = type
     }

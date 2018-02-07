@@ -121,7 +121,7 @@
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRC-QT-Bgf">
-                                <rect key="frame" x="0.0" y="91" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="1.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -152,7 +152,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pMA-N6-Lqo">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Leb-Ot-se3"/>
-                        <barButtonItem key="rightBarButtonItem" title="Steps" width="3" id="2iS-a6-M5q">
+                        <barButtonItem key="rightBarButtonItem" title="Distance" width="3" id="2iS-a6-M5q">
                             <connections>
                                 <action selector="stepsButtonClicked:" destination="Q14-2O-Xsm" id="DQR-jg-m5X"/>
                             </connections>
@@ -164,6 +164,7 @@
                         <outlet property="blueLabel" destination="qRC-QT-Bgf" id="uWv-jQ-ESf"/>
                         <outlet property="firstFloorView" destination="bG0-dp-UqZ" id="EAW-Q5-rtC"/>
                         <outlet property="secondFloorView" destination="mMg-xg-siO" id="lFV-3p-qsb"/>
+                        <outlet property="segmentedControl" destination="08R-av-ypr" id="yaz-Xi-zXO"/>
                         <outlet property="stepsButton" destination="2iS-a6-M5q" id="tpL-u0-rrV"/>
                         <segue destination="jyA-6e-ODN" kind="show" identifier="segueSteps" id="2xE-xj-Nm1"/>
                     </connections>

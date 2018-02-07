@@ -111,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				9F39C72720010C6C0032C30A /* Latitudes_first.plist */,
-				9FC98CEA20185CAA00505ACB /* Latitudes_second.plist */,
 				9F39C725200055B10032C30A /* Longitudes_first.plist */,
+				9FC98CEA20185CAA00505ACB /* Latitudes_second.plist */,
 				9FC98CEC20185D3200505ACB /* Longitudes_second.plist */,
 				9F6B51221FF01879009051F4 /* GBSF1.plist */,
 				9FA9C40B2026588A00DDBB40 /* GBSF2.plist */,

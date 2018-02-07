@@ -12,41 +12,32 @@ class firstFloorViewController: UIViewController {
     var secondFloorPoints = [String]()
     
     var movement = String()
+    var destinationName = String()
     
     func addAnnotations() {
+        let cgPoints = firstFloorPoints.map { CGPointFromString($0) }
+        let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
+        
+        let coordinate = coords[coords.count-1] //get the last coord
         
         if movement == "first" {
-            print(movement)
-            let cgPoints = firstFloorPoints.map { CGPointFromString($0) }
-            let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
-            
-            let coordinate = coords[coords.count-1] //get the last coord
-            //let typeRawValue = ("destination") ?? "destination"
             let type = annotationType(rawValue: "destination") ?? .destination //this is the same rawValue as Annotations.swift enum case
             
-            let annotation = Annotations(coordinate: coordinate, type: type)
+            let annotation = Annotations(coordinate: coordinate, title: destinationName, type: type)
             firstFloorMapView.addAnnotation(annotation)
         }
             
         else if movement == "moving_upstairs" {
-            let cgPoints = firstFloorPoints.map { CGPointFromString($0) }
-            let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
-            
-            let coordinate = coords[coords.count-1] //get the last coord
             let type = annotationType(rawValue: "moving_upstairs") ?? .moving_upstairs //this is the same rawValue as Annotations.swift enum case
             
-            let annotation = Annotations(coordinate: coordinate, type: type)
+            let annotation = Annotations(coordinate: coordinate, title: destinationName, type: type)
             firstFloorMapView.addAnnotation(annotation)
         }
             
         else if movement == "moving_downstairs" {
-            let cgPoints = firstFloorPoints.map { CGPointFromString($0) }
-            let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
+            let type = annotationType(rawValue: "destination") ?? .destination //this is the same rawValue as Annotations.swift enum case
             
-            let coordinate = coords[coords.count-1] //get the last coord
-            let type = annotationType(rawValue: "moving_downstairs") ?? .moving_downstairs //this is the same rawValue as Annotations.swift enum case
-            
-            let annotation = Annotations(coordinate: coordinate, type: type)
+            let annotation = Annotations(coordinate: coordinate, title: destinationName, type: type)
             firstFloorMapView.addAnnotation(annotation)
         }
     }

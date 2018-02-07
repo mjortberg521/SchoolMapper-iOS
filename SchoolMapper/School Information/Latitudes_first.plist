@@ -62,6 +62,12 @@
 	<string>42.088545</string>
 	<key>678</key>
 	<string>42.088545</string>
+	<key>680</key>
+	<string>42.088545°</string>
+	<key>682</key>
+	<string>42.088545°</string>
+	<key>690</key>
+	<string>42.088588°</string>
 	<key>548</key>
 	<string>42.08881</string>
 	<key>628</key>
@@ -70,6 +76,8 @@
 	<string>42.089005</string>
 	<key>624</key>
 	<string>42.089005</string>
+	<key>600</key>
+	<string>42.089016</string>
 	<key>605</key>
 	<string>42.089194</string>
 	<key>603</key>
@@ -164,6 +172,8 @@
 	<string>42.088695</string>
 	<key>124</key>
 	<string>42.088753</string>
+	<key>127</key>
+	<string>42.088886°</string>
 	<key>176</key>
 	<string>42.089</string>
 	<key>183</key>
@@ -174,6 +184,34 @@
 	<string>42.089149</string>
 	<key>184</key>
 	<string>42.089149</string>
+	<key>141</key>
+	<string>42.089243°</string>
+	<key>142</key>
+	<string>42.089252°</string>
+	<key>140</key>
+	<string>42.089194°</string>
+	<key>138</key>
+	<string>42.089164°</string>
+	<key>139</key>
+	<string>42.089147°</string>
+	<key>135</key>
+	<string>42.089127°</string>
+	<key>133</key>
+	<string>42.089033°</string>
+	<key>167</key>
+	<string>42.088876°</string>
+	<key>166</key>
+	<string>42.088902°</string>
+	<key>164</key>
+	<string>42.088790°</string>
+	<key>162</key>
+	<string>42.088742°</string>
+	<key>165</key>
+	<string>42.088840°</string>
+	<key>163</key>
+	<string>42.088768°</string>
+	<key>161</key>
+	<string>42.088726°</string>
 	<key>001</key>
 	<string>42.088093</string>
 	<key>002</key>
@@ -292,6 +330,36 @@
 	<string>42.089938</string>
 	<key>059</key>
 	<string>42.088640</string>
+	<key>060</key>
+	<string>42.088640</string>
+	<key>061</key>
+	<string>42.089664°</string>
+	<key>062</key>
+	<string>42.089700°</string>
+	<key>063</key>
+	<string>42.089700°</string>
+	<key>064</key>
+	<string>42.089664°</string>
+	<key>065</key>
+	<string>42.089660°</string>
+    <key>066</key>
+    <string>42.088093°</string>
+    <key>067</key>
+    <string>42.088324°</string>
+    <key>068</key>
+    <string>42.088106°</string>
+    <key>069</key>
+    <string>42.088137°</string>
+    <key>070</key>
+    <string>42.088188°</string>
+    <key>071</key>
+    <string>42.088220°</string>
+    <key>072</key>
+    <string>42.088177°</string>
+    <key>073</key>
+    <string>42.088423°</string>
+    <key>074</key>
+    <string>42.088435°</string>
 	<key>801</key>
 	<string>42.0886</string>
 	<key>711</key>
@@ -316,5 +384,25 @@
 	<string>42.090037</string>
 	<key>5001</key>
 	<string>42.088640°</string>
+	<key>5003</key>
+	<string>42.088640</string>
+	<key>5005</key>
+	<string>42.088949°</string>
+	<key>5007</key>
+	<string>42.089665°</string>
+	<key>5009</key>
+	<string>42.089658°</string>
+    <key>5011</key>
+    <string>42.088473°</string>
+    <key>5013</key>
+    <string>42.088186°</string>
+    <key>5015</key>
+    <string>42.088063°</string>
+    <key>5017</key>
+    <string>42.088167°</string>
+    <key>5019</key>
+    <string>42.088472°</string>
+    <key>5021</key>
+    <string>42.088324°</string>
 </dict>
 </plist>
