@@ -1,10 +1,4 @@
-//
-//  AnnotationView.swift
-//  Park View
-//
-//  Created by Matthew Jortberg on 2018-01-28.
 //  Copyright © 2018 Matthew Jortberg. All rights reserved.
-//
 
 import UIKit
 import MapKit

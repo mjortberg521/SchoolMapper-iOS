@@ -26,8 +26,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Navigation</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Navigation</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Navigation</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>For map in application</string>
+	<string>Navigation</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,8 +49,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

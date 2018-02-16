@@ -1,8 +1,4 @@
-//
-//  StepsViewController.swift
-//
-//  Created by Matthew Jortberg on 2017-12-28.
-//
+//  Copyright © 2018 Matthew Jortberg. All rights reserved.
 
 import Foundation
 import UIKit

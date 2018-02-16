@@ -1,10 +1,4 @@
-//
-//  Annotations.swift
-//  Park View
-//
-//  Created by Matthew Jortberg on 2018-01-28.
 //  Copyright © 2018 Matthew Jortberg. All rights reserved.
-//
 
 import UIKit
 import MapKit
@@ -13,16 +7,18 @@ enum annotationType: String { //removed Int
     case destination = "destination"
     case moving_downstairs
     case moving_upstairs
+    //case starting
     
     func image() -> UIImage {
         switch self {
         case .destination:
-            print("DESTINATIONWORKING")
             return #imageLiteral(resourceName: "destination_icon")
         case .moving_downstairs:
             return #imageLiteral(resourceName: "down_stairs")
         case .moving_upstairs:
             return #imageLiteral(resourceName: "up_stairs")
+        //case .starting:
+            //return #imageLiteral(resourceName: "start_arrow")
         }
     }
 }
@@ -38,5 +34,6 @@ class Annotations: NSObject, MKAnnotation {
         self.title = title
         //self.subtitle = subtitle
         self.type = type
+        
     }
 }

@@ -3,37 +3,37 @@
 <plist version="1.0">
 <dict>
 	<key>374</key>
-	<string>42.088093</string>
+	<string>42.088104</string>
 	<key>370</key>
-	<string>42.088093</string>
+	<string>42.088104</string>
 	<key>368</key>
-	<string>42.088093</string>
+	<string>42.088104</string>
 	<key>366</key>
-	<string>42.088093</string>
+	<string>42.088104</string>
 	<key>362</key>
-	<string>42.088093</string>
+	<string>42.088104</string>
 	<key>360</key>
-	<string>42.088093</string>
+	<string>42.088104</string>
 	<key>333</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>331</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>332</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>339</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>340</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>341</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>344</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>345</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>348</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>349</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>320</key>
 	<string>42.088428</string>
 	<key>316</key>
@@ -213,9 +213,9 @@
 	<key>161</key>
 	<string>42.088726°</string>
 	<key>001</key>
-	<string>42.088093</string>
+	<string>42.088104</string>
 	<key>002</key>
-	<string>42.08822</string>
+	<string>42.088227</string>
 	<key>003</key>
 	<string>42.088428</string>
 	<key>004</key>
@@ -342,24 +342,24 @@
 	<string>42.089664°</string>
 	<key>065</key>
 	<string>42.089660°</string>
-    <key>066</key>
-    <string>42.088093°</string>
-    <key>067</key>
-    <string>42.088324°</string>
-    <key>068</key>
-    <string>42.088106°</string>
-    <key>069</key>
-    <string>42.088137°</string>
-    <key>070</key>
-    <string>42.088188°</string>
-    <key>071</key>
-    <string>42.088220°</string>
-    <key>072</key>
-    <string>42.088177°</string>
-    <key>073</key>
-    <string>42.088423°</string>
-    <key>074</key>
-    <string>42.088435°</string>
+	<key>066</key>
+	<string>42.088104</string>
+	<key>067</key>
+	<string>42.088324°</string>
+	<key>068</key>
+	<string>42.088106°</string>
+	<key>069</key>
+	<string>42.088137°</string>
+	<key>070</key>
+	<string>42.088188°</string>
+	<key>071</key>
+	<string>42.088227°</string>
+	<key>072</key>
+	<string>42.088177°</string>
+	<key>073</key>
+	<string>42.088423°</string>
+	<key>074</key>
+	<string>42.088435°</string>
 	<key>801</key>
 	<string>42.0886</string>
 	<key>711</key>
@@ -392,17 +392,17 @@
 	<string>42.089665°</string>
 	<key>5009</key>
 	<string>42.089658°</string>
-    <key>5011</key>
-    <string>42.088473°</string>
-    <key>5013</key>
-    <string>42.088186°</string>
-    <key>5015</key>
-    <string>42.088063°</string>
-    <key>5017</key>
-    <string>42.088167°</string>
-    <key>5019</key>
-    <string>42.088472°</string>
-    <key>5021</key>
-    <string>42.088324°</string>
+	<key>5011</key>
+	<string>42.088473°</string>
+	<key>5013</key>
+	<string>42.088186°</string>
+	<key>5015</key>
+	<string>42.088063°</string>
+	<key>5017</key>
+	<string>42.088167°</string>
+	<key>5019</key>
+	<string>42.088472°</string>
+	<key>5021</key>
+	<string>42.088324°</string>
 </dict>
 </plist>

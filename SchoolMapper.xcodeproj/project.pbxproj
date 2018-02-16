@@ -18,6 +18,8 @@
 		9F8493482016DBC8004E6E71 /* firstFloorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8493472016DBC7004E6E71 /* firstFloorViewController.swift */; };
 		9F84934A2016DC86004E6E71 /* secondFloorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8493492016DC86004E6E71 /* secondFloorViewController.swift */; };
 		9FA9C40C2026588A00DDBB40 /* GBSF2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FA9C40B2026588A00DDBB40 /* GBSF2.plist */; };
+		9FA9C40E202F2F7500DDBB40 /* GBSF2-black.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FA9C40D202F2F7400DDBB40 /* GBSF2-black.plist */; };
+		9FBF2C0A203267F500F1271A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBF2C09203267F500F1271A /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9FC98CEB20185CAA00505ACB /* Latitudes_second.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FC98CEA20185CAA00505ACB /* Latitudes_second.plist */; };
 		9FC98CED20185D3200505ACB /* Longitudes_second.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FC98CEC20185D3200505ACB /* Longitudes_second.plist */; };
 		9FC98CF3201E563B00505ACB /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC98CF2201E563B00505ACB /* Annotations.swift */; };
@@ -41,6 +43,8 @@
 		9F8493472016DBC7004E6E71 /* firstFloorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstFloorViewController.swift; sourceTree = "<group>"; };
 		9F8493492016DC86004E6E71 /* secondFloorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondFloorViewController.swift; sourceTree = "<group>"; };
 		9FA9C40B2026588A00DDBB40 /* GBSF2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GBSF2.plist; sourceTree = "<group>"; };
+		9FA9C40D202F2F7400DDBB40 /* GBSF2-black.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GBSF2-black.plist"; sourceTree = "<group>"; };
+		9FBF2C09203267F500F1271A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9FC98CEA20185CAA00505ACB /* Latitudes_second.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Latitudes_second.plist; sourceTree = "<group>"; };
 		9FC98CEC20185D3200505ACB /* Longitudes_second.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Longitudes_second.plist; sourceTree = "<group>"; };
 		9FC98CF2201E563B00505ACB /* Annotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotations.swift; sourceTree = "<group>"; };
@@ -59,12 +63,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBF2C0A203267F500F1271A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9FBF2C06203211B100F1271A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FBF2C09203267F500F1271A /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9FC98CF1201E561400505ACB /* Annotations */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +92,7 @@
 			children = (
 				C09F12D91F1C39B70013BFBC /* SchoolMapper */,
 				C09F12D81F1C39B70013BFBC /* Products */,
+				9FBF2C06203211B100F1271A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +130,7 @@
 				9FC98CEC20185D3200505ACB /* Longitudes_second.plist */,
 				9F6B51221FF01879009051F4 /* GBSF1.plist */,
 				9FA9C40B2026588A00DDBB40 /* GBSF2.plist */,
+				9FA9C40D202F2F7400DDBB40 /* GBSF2-black.plist */,
 			);
 			path = "School Information";
 			sourceTree = "<group>";
@@ -181,6 +196,11 @@
 				TargetAttributes = {
 					C09F12D61F1C39B70013BFBC = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -208,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3986C220028A8D006E5EA8 /* Latitudes_first.plist in Resources */,
+				9FA9C40E202F2F7500DDBB40 /* GBSF2-black.plist in Resources */,
 				9F3986C320028A8D006E5EA8 /* Longitudes_first.plist in Resources */,
 				9FC98CF7201ED01800505ACB /* AssetsNew.xcassets in Resources */,
 				9FA9C40C2026588A00DDBB40 /* GBSF2.plist in Resources */,
@@ -376,7 +397,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 8RN8UZGBQ9;
 				INFOPLIST_FILE = SchoolMapper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mjortberg521.SchoolMapper;
 				PRODUCT_NAME = SchoolMapper;
@@ -392,7 +413,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 8RN8UZGBQ9;
 				INFOPLIST_FILE = SchoolMapper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mjortberg521.SchoolMapper;
 				PRODUCT_NAME = SchoolMapper;

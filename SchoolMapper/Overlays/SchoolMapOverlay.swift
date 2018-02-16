@@ -1,3 +1,4 @@
+//  Copyright © 2018 Matthew Jortberg. All rights reserved.
 import UIKit
 import MapKit
 

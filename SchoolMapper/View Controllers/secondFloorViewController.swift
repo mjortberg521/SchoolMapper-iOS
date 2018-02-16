@@ -1,7 +1,8 @@
+//  Copyright © 2018 Matthew Jortberg. All rights reserved.
 import Foundation
 import MapKit
 
-class secondFloorViewController: UIViewController {
+class secondFloorViewController: UIViewController, CLLocationManagerDelegate {
     
     //add the secondFloorMapView from the container's child
     @IBOutlet weak var secondFloorMapView: MKMapView!
@@ -31,7 +32,7 @@ class secondFloorViewController: UIViewController {
         else if movement == "moving_downstairs" {
             let type = annotationType(rawValue: "moving_downstairs") ?? .moving_downstairs
             
-            let annotation = Annotations(coordinate: coordinate, title: destinationName, type: type)
+            let annotation = Annotations(coordinate: coordinate, title: "", type: type)
             secondFloorMapView.addAnnotation(annotation)
         }
         
@@ -82,8 +83,39 @@ class secondFloorViewController: UIViewController {
         }
     }
     
+    func getStartHeading (coords: [CLLocationCoordinate2D]) -> CLLocationDirection {
+        //latDelta = ((coords[(coords.count)-1]).latitude-(coords[0]).latitude)
+        
+        var latDelta = Double()
+        var lonDelta = Double()
+        
+        latDelta = coords[1].latitude-coords[0].latitude
+        lonDelta = coords[1].longitude-coords[0].longitude
+        
+        var y = Double()
+        var x = Double()
+        var brng = Double()
+        
+        y = sin(lonDelta) * cos(latDelta)
+        x = cos(coords[0].latitude) * sin(coords[1].latitude) - sin(coords[0].latitude) * cos(coords[1].latitude) * cos(lonDelta)
+        
+        brng = atan2(y, x)
+        
+        brng = rad2deg(rad: brng)
+        brng = (brng + 360) .truncatingRemainder(dividingBy: 360)
+        //brng = 360 - brng // count degrees counter-clockwise - remove to make clockwise
+        return brng
+    }
+    
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation?
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         secondFloorMapView.showsCompass = true
+        secondFloorMapView.showsUserLocation = true
+        secondFloorMapView.delegate = self
+        
         
         //let latDelta = school.overlayTopLeftCoordinate.latitude - school.overlayBottomRightCoordinate.latitude
         //let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
@@ -94,6 +126,9 @@ class secondFloorViewController: UIViewController {
         if secondFloorPoints.isEmpty == false  {
             let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
             let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
+            
+            let myPolyline = MKPolyline(coordinates: coords, count: coords.count)
+            secondFloorMapView.add(myPolyline)
             
             var latDelta = Double()
             latDelta = ((coords[(coords.count)-1]).latitude-(coords[0]).latitude)
@@ -110,8 +145,29 @@ class secondFloorViewController: UIViewController {
             
             secondFloorMapView.setRegion(region, animated: true)
             
-            let myPolyline = MKPolyline(coordinates: coords, count: coords.count)
-            secondFloorMapView.add(myPolyline)
+            if coords.count == 1 {
+                self.secondFloorMapView.camera.pitch = 45
+            }
+                
+            else {
+                var circles = [MKOverlay]()
+                
+                let outerCircleOverlay = MKCircle(center: coords[0], radius: 2.5)
+                let innerCircleOverlay = MKCircle(center: coords[0], radius: 2)
+                
+                circles.append(outerCircleOverlay)
+                circles.append(innerCircleOverlay)
+                
+                secondFloorMapView.addOverlays(circles, level: MKOverlayLevel.aboveLabels)
+                
+                var heading = Double()
+                heading = getStartHeading(coords: coords)
+                
+                //self.firstFloorMapView.camera.altitude = 1000 as? CLLocationDistance ?? CLLocationDistance()
+                self.secondFloorMapView.camera.pitch = 45
+                self.secondFloorMapView.camera.heading = heading
+                //self.firstFloorMapView.camera.altitude = 890.00 as? CLLocationDistance ?? CLLocationDistance()
+            }
             
             addAnnotations()
         }
@@ -129,6 +185,40 @@ class secondFloorViewController: UIViewController {
         }
     }
     
+    func startReceivingLocationChanges() {
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        if authorizationStatus != .authorizedWhenInUse && authorizationStatus != .authorizedAlways {
+            // User has not authorized access to location information.
+            
+            return
+        }
+        // Do not start services that aren't available.
+        if !CLLocationManager.locationServicesEnabled() {
+            // Location services is not available.
+            
+            return
+        }
+        // Configure and start the service.
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 1.0  // In meters.
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
+        //let lastLocation = locations.last!
+        // Do something with the location.
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if let error = error as? CLError, error.code == .denied {
+            // Location updates are not authorized.
+            manager.stopUpdatingLocation()
+            return
+        }
+        // Notify the user of any errors.
+    }
+    
     // enforce minimum zoom level
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         
@@ -137,15 +227,22 @@ class secondFloorViewController: UIViewController {
             modifyingMap = true
             //prevent infinite loop
             
-            self.secondFloorMapView.camera.altitude = 1099.00 as? CLLocationDistance ?? CLLocationDistance()
-            
-            let latDelta = school.overlayTopLeftCoordinate.latitude - school.overlayBottomRightCoordinate.latitude
-            let lonDelta = school.overlayTopLeftCoordinate.longitude - school.overlayBottomRightCoordinate.longitude
-            let span = MKCoordinateSpanMake(fabs(latDelta), fabs(lonDelta)) //prev second argument 0.0
+            self.secondFloorMapView.camera.altitude = 1099.00 as CLLocationDistance //?? CLLocationDistance()
             
             if secondFloorPoints.isEmpty == false {
                 let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
                 let coords = cgPoints.map { CLLocationCoordinate2DMake(CLLocationDegrees($0.x), CLLocationDegrees($0.y)) }
+                
+                //center the map on the user's route
+                var latDelta = Double()
+                latDelta = ((coords[(coords.count)-1]).latitude-(coords[0]).latitude)
+                latDelta+=latDelta/3 //add a slight buffer to allow viewing of space around start and end point
+                
+                var lonDelta = Double()
+                lonDelta = (coords[(coords.count)-1]).longitude-(coords[0]).longitude
+                lonDelta+=lonDelta/3
+                
+                let span = MKCoordinateSpanMake(fabs(latDelta), fabs(lonDelta)) //prev second argument 0.0
                 
                 let midPoint = centerCoordinate(forCoordinates: coords) //get the middle coordinate of the route
                 let region = MKCoordinateRegionMake(midPoint, span) //center the view on the endpoint lat/long
@@ -154,12 +251,28 @@ class secondFloorViewController: UIViewController {
             }
                 
             else if secondFloorPoints.isEmpty == true { //if the array is empty, center the map on the school center
+                let latDelta = school.overlayTopLeftCoordinate.latitude - school.overlayBottomRightCoordinate.latitude
+                let lonDelta = school.overlayTopLeftCoordinate.longitude - school.overlayBottomRightCoordinate.longitude
+                let span = MKCoordinateSpanMake(fabs(latDelta), fabs(lonDelta)) //prev second argument 0.0
+                
                 let center = school.midCoordinate
                 let region = MKCoordinateRegionMake(center, span)
                 
                 secondFloorMapView.setRegion(region, animated: true)
             }
+            
             modifyingMap = false
+        }
+    }
+    
+    class CustomPolyline: MKPolylineRenderer { //custom polyline prevents re-render of thickness in the view
+        
+        override func applyStrokeProperties(to context: CGContext, atZoomScale zoomScale: MKZoomScale) {
+            super.applyStrokeProperties(to: context, atZoomScale: zoomScale)
+            UIGraphicsPushContext(context)
+            if let ctx = UIGraphicsGetCurrentContext() {
+                ctx.setLineWidth(self.lineWidth)
+            }
         }
     }
 }
@@ -172,19 +285,37 @@ extension secondFloorViewController: MKMapViewDelegate {
         if overlay is SchoolMapOverlay {
             return SchoolMapOverlayView(overlay: overlay, overlayImage: #imageLiteral(resourceName: "GBSF2"))
         } else if overlay is MKPolyline {
-            let lineView = MKPolylineRenderer(overlay: overlay)
+            let lineView = CustomPolyline(overlay: overlay)
             lineView.strokeColor = UIColor(red:0.2, green:0.48, blue:1.00, alpha:1.0)
-            lineView.lineWidth = 8.5
+            lineView.lineWidth = 16
             return lineView
+        }
+        
+        else if let overlay = overlay as? MKCircle {
+            if overlay.radius == 2.5 {
+                let circleRenderer = MKCircleRenderer(circle: overlay)
+                circleRenderer.fillColor = UIColor.black
+                
+                return circleRenderer
+            }
+                
+            else if overlay.radius == 2 {
+                let circleRenderer = MKCircleRenderer(circle: overlay)
+                circleRenderer.fillColor = UIColor.white
+                
+                return circleRenderer
+            }
         }
         return MKOverlayRenderer()
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if (annotation is MKUserLocation) {
+            return nil
+        }
         
         let annotationView = AnnotationView(annotation: annotation, reuseIdentifier: "Annotation")
         annotationView.canShowCallout = false
         return annotationView
     }
-
 }
