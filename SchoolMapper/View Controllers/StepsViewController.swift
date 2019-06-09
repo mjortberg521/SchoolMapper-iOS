@@ -6,6 +6,11 @@ import UIKit
 class StepsViewController: UITableViewController {
 
     // MARK: - UITableViewDataSource
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationItem.title = "Distance"
+    }
     
     var distanceInFeet = Int()
     lazy var displayDistanceInFeet = String(distanceInFeet)+" feet"
@@ -16,7 +21,7 @@ class StepsViewController: UITableViewController {
     lazy var steps = [displayDistanceInFeet, displayDistanceInMeters]
     
     override func viewDidLoad() {
-        navigationItem.title = "Steps"
+        
         super.viewDidLoad()
     }
     
