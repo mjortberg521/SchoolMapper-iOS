@@ -21,21 +21,32 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.4</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Navigation</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Navigation</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Navigation</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Navigation</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Navigation</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortIconTypeAdd</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Enter Route</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.jortberg.SchoolMapper.route</string>
+		</dict>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

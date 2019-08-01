@@ -99,21 +99,21 @@
 	<key>607</key>
 	<string>-87.850648</string>
 	<key>198</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>199</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>197</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>194</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>195</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>193</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>190</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>191</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>160</key>
 	<string>-87.85008</string>
 	<key>159</key>
@@ -175,15 +175,15 @@
 	<key>127</key>
 	<string>-87.850080</string>
 	<key>176</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>183</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>181</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>182</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>184</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>141</key>
 	<string>-87.850080°</string>
 	<key>142</key>
@@ -199,19 +199,19 @@
 	<key>133</key>
 	<string>-87.850080°</string>
 	<key>167</key>
-	<string>-87.850364°</string>
+	<string>-87.850360°°</string>
 	<key>166</key>
-	<string>-87.850364°</string>
+	<string>-87.850360°°</string>
 	<key>164</key>
-	<string>-87.850364°</string>
+	<string>-87.850360°°</string>
 	<key>162</key>
-	<string>-87.850364°</string>
+	<string>-87.850360°°</string>
 	<key>165</key>
-	<string>-87.850364°</string>
+	<string>-87.850360°°</string>
 	<key>163</key>
-	<string>-87.850364°</string>
+	<string>-87.850360°°</string>
 	<key>161</key>
-	<string>-87.850364°</string>
+	<string>-87.850360°°</string>
 	<key>001</key>
 	<string>-87.851439</string>
 	<key>002</key>
@@ -233,9 +233,9 @@
 	<key>010</key>
 	<string>-87.850526</string>
 	<key>011</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>012</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>013</key>
 	<string>-87.85077</string>
 	<key>014</key>
@@ -253,7 +253,7 @@
 	<key>020</key>
 	<string>-87.85008</string>
 	<key>021</key>
-	<string>-87.850364</string>
+	<string>-87.850360°</string>
 	<key>022</key>
 	<string>-87.850526</string>
 	<key>023</key>
@@ -331,7 +331,7 @@
 	<key>059</key>
 	<string>-87.850080°</string>
 	<key>060</key>
-	<string>-87.850364°</string>
+	<string>-87.850360°°</string>
 	<key>061</key>
 	<string>-87.850080°</string>
 	<key>062</key>
@@ -341,25 +341,29 @@
 	<key>064</key>
 	<string>-87.849915°</string>
 	<key>065</key>
-	<string>-87.850364°</string>
-    <key>066</key>
-    <string>-87.851015°</string>
-    <key>067</key>
-    <string>-87.851439°</string>
-    <key>068</key>
-    <string>-87.852191°</string>
-    <key>069</key>
-    <string>-87.852236°</string>
-    <key>070</key>
-    <string>-87.852238°</string>
-    <key>071</key>
-    <string>-87.852175°</string>
-    <key>072</key>
-    <string>-87.852201°</string>
-    <key>073</key>
-    <string>-87.852181°</string>
-    <key>074</key>
-    <string>-87.852205°</string>
+	<string>-87.850360°°</string>
+	<key>066</key>
+	<string>-87.851015°</string>
+	<key>067</key>
+	<string>-87.851439°</string>
+	<key>068</key>
+	<string>-87.852191°</string>
+	<key>069</key>
+	<string>-87.852236°</string>
+	<key>070</key>
+	<string>-87.852238°</string>
+	<key>071</key>
+	<string>-87.852175°</string>
+	<key>072</key>
+	<string>-87.852201°</string>
+	<key>073</key>
+	<string>-87.852181°</string>
+	<key>074</key>
+	<string>-87.852205°</string>
+	<key>075</key>
+	<string>-87.851490°</string>
+	<key>076</key>
+	<string>-87.850223°</string>
 	<key>801</key>
 	<string>-87.85022</string>
 	<key>711</key>
@@ -392,17 +396,41 @@
 	<string>-87.850001°</string>
 	<key>5009</key>
 	<string>-87.850416°</string>
-    <key>5011</key>
-    <string>-87.851014°</string>
-    <key>5013</key>
-    <string>-87.851013°</string>
-    <key>5015</key>
-    <string>-87.851015°</string>
-    <key>5017</key>
-    <string>-87.852202°</string>
-    <key>5019</key>
-    <string>-87.852210°</string>
-    <key>5021</key>
-    <string>-87.851488°</string>
+	<key>5011</key>
+	<string>-87.851014°</string>
+	<key>5013</key>
+	<string>-87.851013°</string>
+	<key>5015</key>
+	<string>-87.851015°</string>
+	<key>5017</key>
+	<string>-87.852202°</string>
+	<key>5019</key>
+	<string>-87.852210°</string>
+	<key>5021</key>
+	<string>-87.851488°</string>
+	<key>Auditorium</key>
+	<string>-87.8515</string>
+	<key>Main Office</key>
+	<string>-87.85022</string>
+	<key>Library</key>
+	<string>-87.851312</string>
+	<key>Lyceum</key>
+	<string>-87.849913</string>
+	<key>Titan Learning Center/TLC</key>
+	<string>-87.851371</string>
+	<key>Main Gym</key>
+	<string>-87.851490</string>
+	<key>West Gym</key>
+	<string>-87.85274</string>
+	<key>Fieldhouse</key>
+	<string>-87.852015</string>
+	<key>Student Activities Center/SAC</key>
+	<string>-87.850982</string>
+	<key>Northwest Cafe</key>
+	<string>-87.851428</string>
+	<key>Southwest Cafe</key>
+	<string>-87.851274</string>
+	<key>East/Freshman Cafe</key>
+	<string>-87.850927</string>
 </dict>
 </plist>

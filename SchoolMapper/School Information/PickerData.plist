@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   PickerData.plist
-   SchoolMapper
-
-   Created by Matthew Jortberg on 2018-03-01.
-   Copyright (c) 2018 Matthew Jortberg. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<array>
+	<string>Auditorium</string>
+	<string>Makerspace</string>
+	<string>Main Office</string>
+	<string>Library</string>
+	<string>Lyceum</string>
+	<string>Titan Learning Center</string>
+	<string>Main Gym</string>
+	<string>West Gym</string>
+	<string>Fieldhouse</string>
+	<string>Student Activities Center</string>
+	<string>Northwest Cafe</string>
+	<string>Southwest Cafe</string>
+	<string>East Cafe</string>
+</array>
 </plist>

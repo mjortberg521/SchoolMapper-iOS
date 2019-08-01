@@ -2,13 +2,20 @@
 import Foundation
 import MapKit
 import CoreLocation
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class firstFloorViewController: UIViewController, CLLocationManagerDelegate {
         
     //@IBOutlet weak var firstFloorMapView: MKMapView!
     
     @IBOutlet weak var firstFloorMapView: MKMapView!
-    var school = School(filename: "GBSF1")
+    
+    var schoolName = String()
+    var school = School(schoolName: "Glenbrook South High School") //the name corresponding to our school--this doesn't persist, so we can't set the imageCoordinateDict to something in SourceDestViewController and expect to access it again here
+    
+    var imageCoordinateDictFirst = [String: CLLocationCoordinate2D]()
     
     var distance = Int()
     var firstFloorPoints = [String]() //all the coordinates are being passed along
@@ -16,6 +23,9 @@ class firstFloorViewController: UIViewController, CLLocationManagerDelegate {
     
     var movement = String()
     var destinationName = String()
+    
+    let storage = Storage.storage()
+    var firstFloorplanImage = UIImage()
     
     func addAnnotations() {
         let cgPoints = firstFloorPoints.map { CGPointFromString($0) }
@@ -114,13 +124,37 @@ class firstFloorViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     
+    var midCoordinate = CLLocationCoordinate2D()
+    var overlayTopLeftCoordinate = CLLocationCoordinate2D()
+    var overlayTopRightCoordinate = CLLocationCoordinate2D()
+    var overlayBottomLeftCoordinate = CLLocationCoordinate2D()
+    var overlayBottomRightCoordinate: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2DMake(overlayBottomLeftCoordinate.latitude,
+                                              overlayTopRightCoordinate.longitude)
+        }
+    }
+
     override func viewDidLoad() {
+        
+        print("IMAGECOORDINATEDICT")
+        print(imageCoordinateDictFirst)
+        
+        school.midCoordinate = imageCoordinateDictFirst["midCoordinate"]! //make these school variables so the overlay works--the overlay's bounding box is created in school.swift
+        school.overlayTopLeftCoordinate = imageCoordinateDictFirst["overlayTopLeftCoord"]!
+        school.overlayTopRightCoordinate = imageCoordinateDictFirst["overlayTopRightCoord"]!
+        school.overlayBottomLeftCoordinate = imageCoordinateDictFirst["overlayBottomLeftCoord"]!
+        
         super.viewDidLoad()
         firstFloorMapView.showsCompass = true
-        firstFloorMapView.showsUserLocation = true
+        firstFloorMapView.showsUserLocation = false
+        firstFloorMapView.showsPointsOfInterest = false
         firstFloorMapView.delegate = self
         
-        locationManager.requestWhenInUseAuthorization()
+        print("firstFloorplanImage")
+        print(firstFloorplanImage)
+        
+        //locationManager.requestWhenInUseAuthorization()
         
         let overlay = SchoolMapOverlay(school: school)
         firstFloorMapView.add(overlay)
@@ -134,13 +168,13 @@ class firstFloorViewController: UIViewController, CLLocationManagerDelegate {
             
             var latDelta = Double()
             latDelta = ((coords[(coords.count)-1]).latitude-(coords[0]).latitude) //the lat distance between start and end points
-            latDelta+=latDelta/3 //add a slight buffer to allow viewing of space around start and end point
+            latDelta+=latDelta/4 //add a slight buffer to allow viewing of space around start and end point
             
             var lonDelta = Double()
             lonDelta = (coords[(coords.count)-1]).longitude-(coords[0]).longitude
-            lonDelta+=lonDelta/3
+            lonDelta+=lonDelta/4
             
-            let span = MKCoordinateSpanMake(fabs(latDelta), fabs(lonDelta)) //prev second argument 0.0
+            let span = MKCoordinateSpanMake(fabs(latDelta), fabs(lonDelta))
             
             let midPoint = centerCoordinate(forCoordinates: coords)
             let region = MKCoordinateRegionMake(midPoint, span) //center the view on the middle lat/long
@@ -184,8 +218,12 @@ class firstFloorViewController: UIViewController, CLLocationManagerDelegate {
             firstFloorMapView.setRegion(region, animated: true)
             //self.firstFloorMapView.camera.altitude = 890.00 as? CLLocationDistance ?? CLLocationDistance()
         }
+        
+        //firstFloorMapView.setUserTrackingMode(MKUserTrackingMode.followWithHeading, animated: true)
+    
     }
     
+    //var userHeading: CLLocationDirection?
     
     func startReceivingLocationChanges() {
         
@@ -195,6 +233,7 @@ class firstFloorViewController: UIViewController, CLLocationManagerDelegate {
             
             return
         }
+        
         // Do not start services that aren't available.
         if !CLLocationManager.locationServicesEnabled() {
             // Location services is not available.
@@ -206,6 +245,7 @@ class firstFloorViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.distanceFilter = 1.0  // In meters.
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading() //try in ViewDidLoad
     }
     
     
@@ -213,6 +253,18 @@ class firstFloorViewController: UIViewController, CLLocationManagerDelegate {
         //let lastLocation = locations.last!
         // Do something with the location.
     }
+    
+    /*
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        if newHeading.headingAccuracy < 0 { return }
+        
+        let heading = newHeading.trueHeading > 0 ? newHeading.trueHeading : newHeading.magneticHeading
+        userHeading = heading
+        self.updateHeadingRotation()
+        //updateHeadingRotation()
+        //NotificationCenter.default.post(name: Notification.Name(rawValue: #YOUR KEY#), object: self, userInfo: nil)
+    }
+    */
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         if let error = error as? CLError, error.code == .denied {
@@ -234,7 +286,6 @@ class firstFloorViewController: UIViewController, CLLocationManagerDelegate {
         let geoRegion = CLCircularRegion(center: overlay.coordinate, radius: radius, identifier: identifier)
         locationManager.startMonitoring(for: geoRegion)
     }
-
 
     // enforce minimum zoom level
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
@@ -261,7 +312,7 @@ class firstFloorViewController: UIViewController, CLLocationManagerDelegate {
                 
                 let span = MKCoordinateSpanMake(fabs(latDelta), fabs(lonDelta)) //prev second argument 0.0
                 
-                let midPoint = centerCoordinate(forCoordinates: coords) //to get the middle route coord, we call the custom centerCoordinate function here
+                let midPoint = centerCoordinate(forCoordinates: coords) //to get the geometric midpoint of the route, we call the custom centerCoordinate function here
                 let region = MKCoordinateRegionMake(midPoint, span) //center the view on the middle lat/long
                 
                 firstFloorMapView.setRegion(region, animated: true) //setting the correct region                
@@ -298,7 +349,7 @@ extension firstFloorViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is SchoolMapOverlay {
-            return SchoolMapOverlayView(overlay: overlay, overlayImage: #imageLiteral(resourceName: "GBSF1"))
+            return SchoolMapOverlayView(overlay: overlay, overlayImage: firstFloorplanImage) //#imageLiteral
         }
         
         else if overlay is MKPolyline {
@@ -339,7 +390,7 @@ extension firstFloorViewController: MKMapViewDelegate {
         return annotationView
     }
 }
-
+/*
 extension MKMapView {
     func animatedZoom(zoomRegion:MKCoordinateRegion, duration:TimeInterval) {
         MKMapView.animate(withDuration: duration, delay: 3, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: UIViewAnimationOptions.curveEaseIn, animations: {
@@ -347,3 +398,4 @@ extension MKMapView {
         }, completion: nil)
     }
 }
+*/

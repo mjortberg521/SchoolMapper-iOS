@@ -8,13 +8,13 @@
 
 import UIKit
 
-class CustomButton: UIButton {
+class CustomContinueButton: UIButton {
     
     
     override open var isHighlighted: Bool {
         didSet {
             if #available(iOS 11.0, *) {
-                backgroundColor = isHighlighted ? UIColor(named: "lightContinueButtonColor") : UIColor(named: "continueButtonColor") //go to a light color, then back to the original color
+                backgroundColor = isHighlighted ? UIColor(named: "lightContinueButtonColor") : UIColor(named: "continueButtonColor") //go to a light color if pressed (highlighted), then back to the original color
             } else {
                 backgroundColor = isHighlighted ? UIColor(red: 0, green: 0.459, blue: 0.980, alpha: 0.5) : UIColor(red: 0, green: 0.459, blue: 0.980, alpha: 1)
             }

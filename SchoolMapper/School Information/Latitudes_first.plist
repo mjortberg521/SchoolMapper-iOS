@@ -35,13 +35,13 @@
 	<key>349</key>
 	<string>42.088227</string>
 	<key>320</key>
-	<string>42.088428</string>
+	<string>42.088433</string>
 	<key>316</key>
-	<string>42.088428</string>
+	<string>42.088433</string>
 	<key>312</key>
-	<string>42.088428</string>
+	<string>42.088433</string>
 	<key>304</key>
-	<string>42.088428</string>
+	<string>42.088433</string>
 	<key>554</key>
 	<string>42.088552</string>
 	<key>556</key>
@@ -91,7 +91,7 @@
 	<key>627</key>
 	<string>42.089319</string>
 	<key>616</key>
-	<string>42.089296</string>
+	<string>42.089300</string>
 	<key>610</key>
 	<string>42.0894</string>
 	<key>609</key>
@@ -217,9 +217,9 @@
 	<key>002</key>
 	<string>42.088227</string>
 	<key>003</key>
-	<string>42.088428</string>
+	<string>42.088433</string>
 	<key>004</key>
-	<string>42.088428</string>
+	<string>42.088433</string>
 	<key>005</key>
 	<string>42.089005</string>
 	<key>006</key>
@@ -231,21 +231,21 @@
 	<key>009</key>
 	<string>42.089005</string>
 	<key>010</key>
-	<string>42.088949</string>
+	<string>42.088958</string>
 	<key>011</key>
-	<string>42.088949</string>
+	<string>42.088958</string>
 	<key>012</key>
-	<string>42.089296</string>
+	<string>42.089300</string>
 	<key>013</key>
-	<string>42.089296</string>
+	<string>42.089300</string>
 	<key>014</key>
-	<string>42.089296</string>
+	<string>42.089300</string>
 	<key>015</key>
-	<string>42.089294</string>
+	<string>42.0893</string>
 	<key>016</key>
-	<string>42.088949</string>
+	<string>42.088958</string>
 	<key>017</key>
-	<string>42.088949</string>
+	<string>42.088958</string>
 	<key>018</key>
 	<string>42.089027</string>
 	<key>019</key>
@@ -279,7 +279,7 @@
 	<key>033</key>
 	<string>42.088227</string>
 	<key>034</key>
-	<string>42.089296</string>
+	<string>42.089300</string>
 	<key>035</key>
 	<string>42.089498</string>
 	<key>036</key>
@@ -360,6 +360,10 @@
 	<string>42.088423°</string>
 	<key>074</key>
 	<string>42.088435°</string>
+	<key>075</key>
+	<string>42.089608°</string>
+	<key>076</key>
+	<string>42.088958°</string>
 	<key>801</key>
 	<string>42.0886</string>
 	<key>711</key>
@@ -387,7 +391,7 @@
 	<key>5003</key>
 	<string>42.088640</string>
 	<key>5005</key>
-	<string>42.088949°</string>
+	<string> 42.088997°</string>
 	<key>5007</key>
 	<string>42.089665°</string>
 	<key>5009</key>
@@ -404,5 +408,29 @@
 	<string>42.088472°</string>
 	<key>5021</key>
 	<string>42.088324°</string>
+	<key>Auditorium</key>
+	<string>42.08881</string>
+	<key>Main Office</key>
+	<string>42.0886</string>
+	<key>Library</key>
+	<string>42.088796</string>
+	<key>Lyceum</key>
+	<string>42.08889</string>
+	<key>Titan Learning Center/TLC</key>
+	<string>42.088873</string>
+	<key>Main Gym</key>
+	<string>42.089608</string>
+	<key>West Gym</key>
+	<string>42.089651</string>
+	<key>Fieldhouse</key>
+	<string>42.089992</string>
+	<key>Student Activities Center/SAC</key>
+	<string>42.089005</string>
+	<key>Northwest Cafe</key>
+	<string>42.089319</string>
+	<key>Southwest Cafe</key>
+	<string>42.089005</string>
+	<key>East/Freshman Cafe</key>
+	<string>42.089005</string>
 </dict>
 </plist>

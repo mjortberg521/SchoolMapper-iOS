@@ -1,13 +1,19 @@
 //  Copyright © 2018 Matthew Jortberg. All rights reserved.
 import Foundation
 import MapKit
+import CoreLocation
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class secondFloorViewController: UIViewController, CLLocationManagerDelegate {
     
     //add the secondFloorMapView from the container's child
     @IBOutlet weak var secondFloorMapView: MKMapView!
     
-    var school = School(filename: "GBSF2")
+    var school = School(schoolName: "Glenbrook South High School")
+    
+    var imageCoordinateDictSecond = [String: CLLocationCoordinate2D]()
     
     var distance = Int()
     var secondFloorPoints = [String]()
@@ -15,6 +21,9 @@ class secondFloorViewController: UIViewController, CLLocationManagerDelegate {
     
     var movement = String()
     var destinationName = String()
+    
+    let storage = Storage.storage()
+    var secondFloorplanImage = UIImage()
     
     func addAnnotations() {
         let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
@@ -110,15 +119,35 @@ class secondFloorViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     
+    var midCoordinate = CLLocationCoordinate2D()
+    var overlayTopLeftCoordinate = CLLocationCoordinate2D()
+    var overlayTopRightCoordinate = CLLocationCoordinate2D()
+    var overlayBottomLeftCoordinate = CLLocationCoordinate2D()
+    var overlayBottomRightCoordinate: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2DMake(overlayBottomLeftCoordinate.latitude,
+                                              overlayTopRightCoordinate.longitude)
+        }
+    }
+    
     override func viewDidLoad() {
+        
+        print("IMAGECOORDINATEDICT")
+        print(imageCoordinateDictSecond)
+        
+        school.midCoordinate = imageCoordinateDictSecond["midCoordinate"]! //make these school variables so the overlay works--the overlay's bounding box is created in school.swift
+        school.overlayTopLeftCoordinate = imageCoordinateDictSecond["overlayTopLeftCoord"]!
+        school.overlayTopRightCoordinate = imageCoordinateDictSecond["overlayTopRightCoord"]!
+        school.overlayBottomLeftCoordinate = imageCoordinateDictSecond["overlayBottomLeftCoord"]!
+        
         super.viewDidLoad()
         secondFloorMapView.showsCompass = true
-        secondFloorMapView.showsUserLocation = true
+        secondFloorMapView.showsUserLocation = false
         secondFloorMapView.delegate = self
         
+        //secondFloorplanImage = school.secondFloorplanImage
         
-        //let latDelta = school.overlayTopLeftCoordinate.latitude - school.overlayBottomRightCoordinate.latitude
-        //let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
+        //locationManager.requestWhenInUseAuthorization()
         
         let overlay = SchoolMapOverlay(school: school)
         secondFloorMapView.add(overlay)
@@ -132,11 +161,11 @@ class secondFloorViewController: UIViewController, CLLocationManagerDelegate {
             
             var latDelta = Double()
             latDelta = ((coords[(coords.count)-1]).latitude-(coords[0]).latitude)
-            latDelta+=latDelta/3 //add a slight buffer to allow viewing of space around start and end point
+            latDelta+=latDelta/4 //add a slight buffer to allow viewing of space around start and end point
             
             var lonDelta = Double()
             lonDelta = (coords[(coords.count)-1]).longitude-(coords[0]).longitude
-            lonDelta+=lonDelta/3
+            lonDelta+=lonDelta/4
             
             let span = MKCoordinateSpanMake(fabs(latDelta), fabs(lonDelta)) //prev second argument 0.0
             
@@ -227,7 +256,7 @@ class secondFloorViewController: UIViewController, CLLocationManagerDelegate {
             modifyingMap = true
             //prevent infinite loop
             
-            self.secondFloorMapView.camera.altitude = 1099.00 as CLLocationDistance //?? CLLocationDistance()
+            //self.secondFloorMapView.camera.altitude = 1099.00 as CLLocationDistance //?? CLLocationDistance()
             
             if secondFloorPoints.isEmpty == false {
                 let cgPoints = secondFloorPoints.map { CGPointFromString($0) }
@@ -282,8 +311,9 @@ class secondFloorViewController: UIViewController, CLLocationManagerDelegate {
 extension secondFloorViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
         if overlay is SchoolMapOverlay {
-            return SchoolMapOverlayView(overlay: overlay, overlayImage: #imageLiteral(resourceName: "GBSF2"))
+            return SchoolMapOverlayView(overlay: overlay, overlayImage: secondFloorplanImage) //#imageLiteral(resourceName: "GBSF2")
         } else if overlay is MKPolyline {
             let lineView = CustomPolyline(overlay: overlay)
             lineView.strokeColor = UIColor(red:0.2, green:0.48, blue:1.00, alpha:1.0)

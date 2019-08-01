@@ -15,7 +15,7 @@
 	<key>203</key>
 	<string>42.088877°</string>
 	<key>204</key>
-	<string>42.088949°</string>
+	<string>42.088958°</string>
 	<key>221</key>
 	<string>42.088715°</string>
 	<key>224</key>
@@ -225,7 +225,7 @@
 	<key>5004</key>
 	<string>42.088640°</string>
 	<key>5006</key>
-	<string>42.088949°</string>
+	<string>42.088993</string>
 	<key>5008</key>
 	<string>42.089665°</string>
 	<key>5010</key>
@@ -253,11 +253,11 @@
 	<key>1005</key>
 	<string>42.088610°</string>
 	<key>1006</key>
-	<string>42.088949°</string>
+	<string>42.088958°</string>
 	<key>1007</key>
-	<string>42.088949°</string>
+	<string>42.088958°</string>
 	<key>1008</key>
-	<string>42.088949°</string>
+	<string>42.088958°</string>
 	<key>1009</key>
 	<string>42.089330°</string>
 	<key>1010</key>
@@ -308,5 +308,7 @@
 	<string>42.088204°</string>
 	<key>1033</key>
 	<string>42.088205°</string>
+	<key>1034</key>
+	<string>42.088958</string>
 </dict>
 </plist>

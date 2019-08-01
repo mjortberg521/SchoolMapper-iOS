@@ -7,73 +7,140 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F3986C220028A8D006E5EA8 /* Latitudes_first.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F39C72720010C6C0032C30A /* Latitudes_first.plist */; };
-		9F3986C320028A8D006E5EA8 /* Longitudes_first.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F39C725200055B10032C30A /* Longitudes_first.plist */; };
+		7F0317A220F05461006F8A16 /* passwordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0317A120F05461006F8A16 /* passwordViewController.swift */; };
+		7FF7A61020FB873100C902F4 /* CustomContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7A60F20FB873100C902F4 /* CustomContinueButton.swift */; };
+		9F1D3E9A2070684900DF66DA /* home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9F1D3E992070684900DF66DA /* home.gpx */; };
+		9F2D5D2A208E5B910086F3AA /* AssetsNew.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F2D5D29208E5B900086F3AA /* AssetsNew.xcassets */; };
+		9F343FE7204B25BF009F47C6 /* puertoRico.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9F343FE6204B25BF009F47C6 /* puertoRico.gpx */; };
+		9F343FE9204B2DA9009F47C6 /* pyongyang.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9F343FE8204B2DA9009F47C6 /* pyongyang.gpx */; };
+		9F3528BE204E448C005802A4 /* saigon.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9F3528BD204E448C005802A4 /* saigon.gpx */; };
+		9F3528C0204E4604005802A4 /* harbin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9F3528BF204E4604005802A4 /* harbin.gpx */; };
+		9F3553452051C5E600336D7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F3553442051C5E600336D7C /* GoogleService-Info.plist */; };
+		9F421D2B2084E1EB0014A30C /* MapTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F421D2A2084E1EB0014A30C /* MapTabViewController.swift */; };
+		9F421D2D2084E2350014A30C /* FirstFloorTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F421D2C2084E2350014A30C /* FirstFloorTabViewController.swift */; };
+		9F421D2F2084E23E0014A30C /* SecondFloorTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F421D2E2084E23E0014A30C /* SecondFloorTabViewController.swift */; };
+		9F503E632060183300EE5270 /* GBSTemp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F503E622060183300EE5270 /* GBSTemp.plist */; };
 		9F6266C7201167BD00404E5A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266C6201167BD00404E5A /* MapViewController.swift */; };
 		9F6266C9201168CD00404E5A /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266C8201168CD00404E5A /* School.swift */; };
 		9F6266CB2011695500404E5A /* SchoolMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266CA2011695500404E5A /* SchoolMapOverlay.swift */; };
 		9F6266CD201169AF00404E5A /* SchoolMapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6266CC201169AF00404E5A /* SchoolMapOverlayView.swift */; };
 		9F6B51231FF01879009051F4 /* GBSF1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F6B51221FF01879009051F4 /* GBSF1.plist */; };
+		9F76975B20696C2E007FCB29 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76975A20696C2E007FCB29 /* settingsViewController.swift */; };
 		9F7B79991FF2C216000C24BB /* SourceDestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B79981FF2C216000C24BB /* SourceDestViewController.swift */; };
 		9F8493482016DBC8004E6E71 /* firstFloorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8493472016DBC7004E6E71 /* firstFloorViewController.swift */; };
 		9F84934A2016DC86004E6E71 /* secondFloorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8493492016DC86004E6E71 /* secondFloorViewController.swift */; };
+		9FA04049203F28C800534EB4 /* SchoolMapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA04048203F28C800534EB4 /* SchoolMapperUITests.swift */; };
 		9FA9C40C2026588A00DDBB40 /* GBSF2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FA9C40B2026588A00DDBB40 /* GBSF2.plist */; };
 		9FA9C40E202F2F7500DDBB40 /* GBSF2-black.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FA9C40D202F2F7400DDBB40 /* GBSF2-black.plist */; };
 		9FBF2C0A203267F500F1271A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBF2C09203267F500F1271A /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		9FC98CEB20185CAA00505ACB /* Latitudes_second.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FC98CEA20185CAA00505ACB /* Latitudes_second.plist */; };
-		9FC98CED20185D3200505ACB /* Longitudes_second.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FC98CEC20185D3200505ACB /* Longitudes_second.plist */; };
 		9FC98CF3201E563B00505ACB /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC98CF2201E563B00505ACB /* Annotations.swift */; };
 		9FC98CF5201E620500505ACB /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC98CF4201E620500505ACB /* AnnotationView.swift */; };
-		9FC98CF7201ED01800505ACB /* AssetsNew.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC98CF6201ED01800505ACB /* AssetsNew.xcassets */; };
 		9FE7AB621FF554C800BD93B9 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7AB611FF554C800BD93B9 /* StepsViewController.swift */; };
 		C09F12DB1F1C39B70013BFBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09F12DA1F1C39B70013BFBC /* AppDelegate.swift */; };
 		C09F12E01F1C39B70013BFBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09F12DE1F1C39B70013BFBC /* Main.storyboard */; };
 		C09F12E51F1C39B70013BFBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09F12E31F1C39B70013BFBC /* LaunchScreen.storyboard */; };
+		F0A2B2CCADD4CB12A15AE20F /* Pods_Park_View.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE492C71D4494EA02CFA98E /* Pods_Park_View.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9FA0404B203F28C800534EB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C09F12CF1F1C39B70013BFBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C09F12D61F1C39B70013BFBC;
+			remoteInfo = "Park View";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		9F39C725200055B10032C30A /* Longitudes_first.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Longitudes_first.plist; sourceTree = "<group>"; };
-		9F39C72720010C6C0032C30A /* Latitudes_first.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Latitudes_first.plist; sourceTree = "<group>"; };
+		0AAE9A85693C725F972724B6 /* Pods-Park View.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Park View.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Park View/Pods-Park View.debug.xcconfig"; sourceTree = "<group>"; };
+		0FE492C71D4494EA02CFA98E /* Pods_Park_View.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Park_View.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F02B56F2110B62E000E3D45 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = SchoolMapper/Overlays/Header.h; sourceTree = SOURCE_ROOT; };
+		7F02B5772110B8A2000E3D45 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		7F02B5782110BA51000E3D45 /* Park View-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Park View-Bridging-Header.h"; sourceTree = "<group>"; };
+		7F0317A120F05461006F8A16 /* passwordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordViewController.swift; sourceTree = "<group>"; };
+		7FF7A60F20FB873100C902F4 /* CustomContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContinueButton.swift; sourceTree = "<group>"; };
+		9F1D3E992070684900DF66DA /* home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.gpx; sourceTree = "<group>"; };
+		9F2D5D28208C30020086F3AA /* SchoolMapper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SchoolMapper.entitlements; sourceTree = "<group>"; };
+		9F2D5D29208E5B900086F3AA /* AssetsNew.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsNew.xcassets; sourceTree = "<group>"; };
+		9F343FE6204B25BF009F47C6 /* puertoRico.gpx */ = {isa = PBXFileReference; lastKnownFileType = text; path = puertoRico.gpx; sourceTree = "<group>"; };
+		9F343FE8204B2DA9009F47C6 /* pyongyang.gpx */ = {isa = PBXFileReference; lastKnownFileType = text; path = pyongyang.gpx; sourceTree = "<group>"; };
+		9F3528BD204E448C005802A4 /* saigon.gpx */ = {isa = PBXFileReference; lastKnownFileType = text; path = saigon.gpx; sourceTree = "<group>"; };
+		9F3528BF204E4604005802A4 /* harbin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = harbin.gpx; sourceTree = "<group>"; };
+		9F3553442051C5E600336D7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9F421D2A2084E1EB0014A30C /* MapTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTabViewController.swift; sourceTree = "<group>"; };
+		9F421D2C2084E2350014A30C /* FirstFloorTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFloorTabViewController.swift; sourceTree = "<group>"; };
+		9F421D2E2084E23E0014A30C /* SecondFloorTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFloorTabViewController.swift; sourceTree = "<group>"; };
+		9F503E622060183300EE5270 /* GBSTemp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GBSTemp.plist; sourceTree = "<group>"; };
 		9F6266C6201167BD00404E5A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9F6266C8201168CD00404E5A /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		9F6266CA2011695500404E5A /* SchoolMapOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMapOverlay.swift; sourceTree = "<group>"; };
 		9F6266CC201169AF00404E5A /* SchoolMapOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMapOverlayView.swift; sourceTree = "<group>"; };
 		9F6B51221FF01879009051F4 /* GBSF1.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GBSF1.plist; sourceTree = "<group>"; };
+		9F76975A20696C2E007FCB29 /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		9F7B79981FF2C216000C24BB /* SourceDestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDestViewController.swift; sourceTree = "<group>"; };
 		9F8493472016DBC7004E6E71 /* firstFloorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstFloorViewController.swift; sourceTree = "<group>"; };
 		9F8493492016DC86004E6E71 /* secondFloorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondFloorViewController.swift; sourceTree = "<group>"; };
+		9FA04046203F28C700534EB4 /* SchoolMapperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchoolMapperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA04048203F28C800534EB4 /* SchoolMapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMapperUITests.swift; sourceTree = "<group>"; };
+		9FA0404A203F28C800534EB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FA9C40B2026588A00DDBB40 /* GBSF2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GBSF2.plist; sourceTree = "<group>"; };
 		9FA9C40D202F2F7400DDBB40 /* GBSF2-black.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GBSF2-black.plist"; sourceTree = "<group>"; };
 		9FBF2C09203267F500F1271A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		9FC98CEA20185CAA00505ACB /* Latitudes_second.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Latitudes_second.plist; sourceTree = "<group>"; };
-		9FC98CEC20185D3200505ACB /* Longitudes_second.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Longitudes_second.plist; sourceTree = "<group>"; };
 		9FC98CF2201E563B00505ACB /* Annotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotations.swift; sourceTree = "<group>"; };
 		9FC98CF4201E620500505ACB /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
-		9FC98CF6201ED01800505ACB /* AssetsNew.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsNew.xcassets; sourceTree = "<group>"; };
 		9FE7AB611FF554C800BD93B9 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 		C09F12D71F1C39B70013BFBC /* SchoolMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09F12DA1F1C39B70013BFBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C09F12DF1F1C39B70013BFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C09F12E41F1C39B70013BFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C09F12E61F1C39B70013BFBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5F75776625938B89C345A57 /* Pods-Park View.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Park View.release.xcconfig"; path = "Pods/Target Support Files/Pods-Park View/Pods-Park View.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9FA04043203F28C700534EB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C09F12D41F1C39B70013BFBC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9FBF2C0A203267F500F1271A /* MapKit.framework in Frameworks */,
+				F0A2B2CCADD4CB12A15AE20F /* Pods_Park_View.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79FA9E90B30D089ECE4D2763 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0AAE9A85693C725F972724B6 /* Pods-Park View.debug.xcconfig */,
+				E5F75776625938B89C345A57 /* Pods-Park View.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9FA04047203F28C800534EB4 /* SchoolMapperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9FA04048203F28C800534EB4 /* SchoolMapperUITests.swift */,
+				9FA0404A203F28C800534EB4 /* Info.plist */,
+			);
+			path = SchoolMapperUITests;
+			sourceTree = "<group>";
+		};
 		9FBF2C06203211B100F1271A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				9FBF2C09203267F500F1271A /* MapKit.framework */,
+				0FE492C71D4494EA02CFA98E /* Pods_Park_View.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -90,9 +157,13 @@
 		C09F12CE1F1C39B70013BFBC = {
 			isa = PBXGroup;
 			children = (
+				9F2D5D28208C30020086F3AA /* SchoolMapper.entitlements */,
+				9F2D5D29208E5B900086F3AA /* AssetsNew.xcassets */,
 				C09F12D91F1C39B70013BFBC /* SchoolMapper */,
+				9FA04047203F28C800534EB4 /* SchoolMapperUITests */,
 				C09F12D81F1C39B70013BFBC /* Products */,
 				9FBF2C06203211B100F1271A /* Frameworks */,
+				79FA9E90B30D089ECE4D2763 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				C09F12D71F1C39B70013BFBC /* SchoolMapper.app */,
+				9FA04046203F28C700534EB4 /* SchoolMapperUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +179,11 @@
 		C09F12D91F1C39B70013BFBC /* SchoolMapper */ = {
 			isa = PBXGroup;
 			children = (
+				9F1D3E992070684900DF66DA /* home.gpx */,
+				9F3528BD204E448C005802A4 /* saigon.gpx */,
+				9F3528BF204E4604005802A4 /* harbin.gpx */,
+				9F343FE6204B25BF009F47C6 /* puertoRico.gpx */,
+				9F343FE8204B2DA9009F47C6 /* pyongyang.gpx */,
 				C09F12EC1F1C40D60013BFBC /* School Information */,
 				C09F130B1F1C47960013BFBC /* Models */,
 				9FC98CF1201E561400505ACB /* Annotations */,
@@ -114,9 +191,11 @@
 				C09F12FA1F1C40D60013BFBC /* View Controllers */,
 				C09F12DA1F1C39B70013BFBC /* AppDelegate.swift */,
 				C09F12DE1F1C39B70013BFBC /* Main.storyboard */,
-				9FC98CF6201ED01800505ACB /* AssetsNew.xcassets */,
 				C09F12E31F1C39B70013BFBC /* LaunchScreen.storyboard */,
 				C09F12E61F1C39B70013BFBC /* Info.plist */,
+				9F3553442051C5E600336D7C /* GoogleService-Info.plist */,
+				7F02B5772110B8A2000E3D45 /* BridgingHeader.h */,
+				7F02B5782110BA51000E3D45 /* Park View-Bridging-Header.h */,
 			);
 			path = SchoolMapper;
 			sourceTree = "<group>";
@@ -124,11 +203,8 @@
 		C09F12EC1F1C40D60013BFBC /* School Information */ = {
 			isa = PBXGroup;
 			children = (
-				9F39C72720010C6C0032C30A /* Latitudes_first.plist */,
-				9F39C725200055B10032C30A /* Longitudes_first.plist */,
-				9FC98CEA20185CAA00505ACB /* Latitudes_second.plist */,
-				9FC98CEC20185D3200505ACB /* Longitudes_second.plist */,
 				9F6B51221FF01879009051F4 /* GBSF1.plist */,
+				9F503E622060183300EE5270 /* GBSTemp.plist */,
 				9FA9C40B2026588A00DDBB40 /* GBSF2.plist */,
 				9FA9C40D202F2F7400DDBB40 /* GBSF2-black.plist */,
 			);
@@ -143,6 +219,12 @@
 				9F8493472016DBC7004E6E71 /* firstFloorViewController.swift */,
 				9F8493492016DC86004E6E71 /* secondFloorViewController.swift */,
 				9FE7AB611FF554C800BD93B9 /* StepsViewController.swift */,
+				9F76975A20696C2E007FCB29 /* settingsViewController.swift */,
+				7F0317A120F05461006F8A16 /* passwordViewController.swift */,
+				7FF7A60F20FB873100C902F4 /* CustomContinueButton.swift */,
+				9F421D2A2084E1EB0014A30C /* MapTabViewController.swift */,
+				9F421D2C2084E2350014A30C /* FirstFloorTabViewController.swift */,
+				9F421D2E2084E23E0014A30C /* SecondFloorTabViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -160,6 +242,7 @@
 			children = (
 				9F6266CA2011695500404E5A /* SchoolMapOverlay.swift */,
 				9F6266CC201169AF00404E5A /* SchoolMapOverlayView.swift */,
+				7F02B56F2110B62E000E3D45 /* Header.h */,
 			);
 			path = Overlays;
 			sourceTree = "<group>";
@@ -167,13 +250,34 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9FA04045203F28C700534EB4 /* SchoolMapperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA0404F203F28C800534EB4 /* Build configuration list for PBXNativeTarget "SchoolMapperUITests" */;
+			buildPhases = (
+				9FA04042203F28C700534EB4 /* Sources */,
+				9FA04043203F28C700534EB4 /* Frameworks */,
+				9FA04044203F28C700534EB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FA0404C203F28C800534EB4 /* PBXTargetDependency */,
+			);
+			name = SchoolMapperUITests;
+			productName = SchoolMapperUITests;
+			productReference = 9FA04046203F28C700534EB4 /* SchoolMapperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		C09F12D61F1C39B70013BFBC /* Park View */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C09F12E91F1C39B70013BFBC /* Build configuration list for PBXNativeTarget "Park View" */;
 			buildPhases = (
+				76A25C7774588F1147D13079 /* [CP] Check Pods Manifest.lock */,
 				C09F12D31F1C39B70013BFBC /* Sources */,
 				C09F12D41F1C39B70013BFBC /* Frameworks */,
 				C09F12D51F1C39B70013BFBC /* Resources */,
+				5CEF03DEEE35B7AEFD2C3572 /* [CP] Embed Pods Frameworks */,
+				9E565805BF9222D9F20939D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,14 +294,23 @@
 		C09F12CF1F1C39B70013BFBC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Matthew Jortberg";
 				TargetAttributes = {
+					9FA04045203F28C700534EB4 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C09F12D61F1C39B70013BFBC;
+					};
 					C09F12D61F1C39B70013BFBC = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -218,50 +331,131 @@
 			projectRoot = "";
 			targets = (
 				C09F12D61F1C39B70013BFBC /* Park View */,
+				9FA04045203F28C700534EB4 /* SchoolMapperUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9FA04044203F28C700534EB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C09F12D51F1C39B70013BFBC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F3986C220028A8D006E5EA8 /* Latitudes_first.plist in Resources */,
+				9F343FE7204B25BF009F47C6 /* puertoRico.gpx in Resources */,
 				9FA9C40E202F2F7500DDBB40 /* GBSF2-black.plist in Resources */,
-				9F3986C320028A8D006E5EA8 /* Longitudes_first.plist in Resources */,
-				9FC98CF7201ED01800505ACB /* AssetsNew.xcassets in Resources */,
+				9F2D5D2A208E5B910086F3AA /* AssetsNew.xcassets in Resources */,
+				9F1D3E9A2070684900DF66DA /* home.gpx in Resources */,
+				9F343FE9204B2DA9009F47C6 /* pyongyang.gpx in Resources */,
+				9F3528C0204E4604005802A4 /* harbin.gpx in Resources */,
 				9FA9C40C2026588A00DDBB40 /* GBSF2.plist in Resources */,
-				9FC98CED20185D3200505ACB /* Longitudes_second.plist in Resources */,
 				C09F12E51F1C39B70013BFBC /* LaunchScreen.storyboard in Resources */,
+				9F3553452051C5E600336D7C /* GoogleService-Info.plist in Resources */,
 				C09F12E01F1C39B70013BFBC /* Main.storyboard in Resources */,
-				9FC98CEB20185CAA00505ACB /* Latitudes_second.plist in Resources */,
+				9F3528BE204E448C005802A4 /* saigon.gpx in Resources */,
+				9F503E632060183300EE5270 /* GBSTemp.plist in Resources */,
 				9F6B51231FF01879009051F4 /* GBSF1.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5CEF03DEEE35B7AEFD2C3572 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Park View/Pods-Park View-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76A25C7774588F1147D13079 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9E565805BF9222D9F20939D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Park View/Pods-Park View-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		9FA04042203F28C700534EB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA04049203F28C800534EB4 /* SchoolMapperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C09F12D31F1C39B70013BFBC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9F7B79991FF2C216000C24BB /* SourceDestViewController.swift in Sources */,
 				9F6266CB2011695500404E5A /* SchoolMapOverlay.swift in Sources */,
+				9F421D2D2084E2350014A30C /* FirstFloorTabViewController.swift in Sources */,
 				9FC98CF3201E563B00505ACB /* Annotations.swift in Sources */,
 				9F8493482016DBC8004E6E71 /* firstFloorViewController.swift in Sources */,
 				9FE7AB621FF554C800BD93B9 /* StepsViewController.swift in Sources */,
 				9FC98CF5201E620500505ACB /* AnnotationView.swift in Sources */,
+				9F421D2B2084E1EB0014A30C /* MapTabViewController.swift in Sources */,
 				C09F12DB1F1C39B70013BFBC /* AppDelegate.swift in Sources */,
+				7F0317A220F05461006F8A16 /* passwordViewController.swift in Sources */,
 				9F6266CD201169AF00404E5A /* SchoolMapOverlayView.swift in Sources */,
 				9F6266C7201167BD00404E5A /* MapViewController.swift in Sources */,
 				9F84934A2016DC86004E6E71 /* secondFloorViewController.swift in Sources */,
+				7FF7A61020FB873100C902F4 /* CustomContinueButton.swift in Sources */,
 				9F6266C9201168CD00404E5A /* School.swift in Sources */,
+				9F76975B20696C2E007FCB29 /* settingsViewController.swift in Sources */,
+				9F421D2F2084E23E0014A30C /* SecondFloorTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9FA0404C203F28C800534EB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C09F12D61F1C39B70013BFBC /* Park View */;
+			targetProxy = 9FA0404B203F28C800534EB4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C09F12DE1F1C39B70013BFBC /* Main.storyboard */ = {
@@ -283,6 +477,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9FA0404D203F28C800534EB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8RN8UZGBQ9;
+				INFOPLIST_FILE = SchoolMapperUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mjortberg521.SchoolMapperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Park View";
+			};
+			name = Debug;
+		};
+		9FA0404E203F28C800534EB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8RN8UZGBQ9;
+				INFOPLIST_FILE = SchoolMapperUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mjortberg521.SchoolMapperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Park View";
+			};
+			name = Release;
+		};
 		C09F12E71F1C39B70013BFBC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -392,39 +618,55 @@
 		};
 		C09F12EA1F1C39B70013BFBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AAE9A85693C725F972724B6 /* Pods-Park View.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 8RN8UZGBQ9;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SchoolMapper.entitlements;
+				DEVELOPMENT_TEAM = JL8LA98NX8;
 				INFOPLIST_FILE = SchoolMapper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mjortberg521.SchoolMapper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jortberg.SchoolMapper;
 				PRODUCT_NAME = SchoolMapper;
+				SWIFT_OBJC_BRIDGING_HEADER = "SchoolMapper/Park View-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		C09F12EB1F1C39B70013BFBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F75776625938B89C345A57 /* Pods-Park View.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 8RN8UZGBQ9;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SchoolMapper.entitlements;
+				DEVELOPMENT_TEAM = JL8LA98NX8;
 				INFOPLIST_FILE = SchoolMapper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mjortberg521.SchoolMapper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jortberg.SchoolMapper;
 				PRODUCT_NAME = SchoolMapper;
+				SWIFT_OBJC_BRIDGING_HEADER = "SchoolMapper/Park View-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9FA0404F203F28C800534EB4 /* Build configuration list for PBXNativeTarget "SchoolMapperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA0404D203F28C800534EB4 /* Debug */,
+				9FA0404E203F28C800534EB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C09F12D21F1C39B70013BFBC /* Build configuration list for PBXProject "SchoolMapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
