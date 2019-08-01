@@ -678,26 +678,8 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     override func viewDidAppear(_ animated: Bool) {
-/*
-        DispatchQueue.global(qos: .utility).async {
-            repeat {
-                print(self.motionManager.accelerometerData?.acceleration ?? "acceleration not available")
-            } while 1<2
-        }*/
-        
+
         let locationManager = CLLocationManager()
-        
-        let deviceAltitude = locationManager.location?.altitude
-        
-        if CMAltimeter.isRelativeAltitudeAvailable() {
-            altimeter.startRelativeAltitudeUpdates(to: OperationQueue.main, withHandler: { data, error in
-                if (error == nil) {
-                    //print(locationManager.location?.altitude)
-                    //print("relative Altitude: \(data?.relativeAltitude)")
-                    //print("Pressure: \(data?.pressure)")
-                }
-            })
-        }
         
         if CLLocationManager.locationServicesEnabled() {
             // Configure and start the service.
@@ -718,14 +700,12 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate, UIPickerV
         
         func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
             if let error = error as? CLError, error.code == .denied {
-                // Location updates are not authorized.
                 manager.stopUpdatingLocation()
                 return
             }
-            // Notify the user of any errors.
         }
         
-        if settingsButton.isEnabled == false {
+        if !settingsButton.isEnabled {
             settingsButton.isEnabled = true
         }
         
@@ -930,56 +910,47 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     @IBAction func commonDestSelectionButtonClicked(_ sender: UIButton) {
         self.commonDestTextField.becomeFirstResponder()
-        //self.errorMessage.isHidden = true
-        
-        //destRoomPicker.reloadAllComponents()
         destRoomPicker.selectRow(0, inComponent: 0, animated: true)
     }
-    ////////////////////////////////////////////////////////////////////
     
-    //triggered when button on picker is pushed
-    @objc func doneSourcePicker (sender:UIButton) { //needed to add @objc in front for this to work -- these events occur when done button clicked
+    @objc func doneSourcePicker (sender:UIButton) {
         self.commonSourceTextField.resignFirstResponder()
-        sourceTextField.text = commonStartLocation //make the source text field the picker val
+        sourceTextField.text = commonStartLocation
     }
     
-    @objc func doneDestPicker (sender:UIButton) { //needed to add @objc in front for this to work
+    @objc func doneDestPicker (sender:UIButton) {
         self.commonDestTextField.resignFirstResponder()
-        destTextField.text = commonDestLocation //make the source text field the picker val
+        destTextField.text = commonDestLocation
     }
     
     @objc func cancelSourcePicker (sender:UIButton) {
-        //Remove view when select cancel
-        self.commonSourceTextField.resignFirstResponder() // To resign the inputView on clicking done.
+        self.commonSourceTextField.resignFirstResponder()
     }
     
     @objc func cancelDestPicker (sender:UIButton) {
-        //Remove view when select cancel
         self.commonDestTextField.resignFirstResponder()
     }
     
-    //create the entire picker frame to rise up from bottom
     //actions triggered when "or select from list" text field begins editing
     @IBAction func commonSourceTextField(_ sender: UITextField) {
-        //errorMessage.isHidden = true
-        sourceTextField.text = ""
-        
-        sourceRoomPicker.selectRow(0, inComponent: 0, animated: false) //set default common start location
-        
-        if pickerData.isEmpty == false { //prevents crash when no internet connection and user tries to select a room
-            commonStartLocation = pickerData[sourceRoomPicker.selectedRow(inComponent: 0)] //set the initial commonStartLocation variable (which is used for sourceTextField.text) to the zeroth row in the picker; this is changed when the user scrolls the picker in didSelectRow
-        }
         
         let tintColor: UIColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.0)
-        //(red: 101.0/255.0, green: 98.0/255.0, blue: 164.0/255.0, alpha: 1.0)
+        let inputView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 240))
         
-        let inputView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 240)) //create a custom input UIView
+        inputView.addSubview(sourceRoomPicker)
         
         sourceRoomPicker.tintColor = tintColor
         sourceRoomPicker.center.x = inputView.center.x
         sourceRoomPicker.center.y = inputView.center.y
         
-        inputView.addSubview(sourceRoomPicker) //add the picker to the input view
+        sourceTextField.text = ""
+        
+        sourceRoomPicker.selectRow(0, inComponent: 0, animated: false)
+        
+        if !pickerData.isEmpty {
+            commonStartLocation = pickerData[sourceRoomPicker.selectedRow(inComponent: 0)] //set the initial commonStartLocation variable (which is used for sourceTextField.text) to the zeroth row in the picker; this is changed when the user scrolls the picker in didSelectRow
+        }
+        
         
         let sourceToolBar: UIToolbar = UIToolbar()
         sourceToolBar.barStyle = UIBarStyle.default
@@ -996,12 +967,11 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     @IBAction func commonDestTextField(_ sender: UITextField) {
-        //errorMessage.isHidden = true
         destTextField.text = ""
         
         destRoomPicker.selectRow(0, inComponent: 0, animated: false)
         
-        if pickerData.isEmpty == false {
+        if !pickerData.isEmpty {
             commonDestLocation = pickerData[destRoomPicker.selectedRow(inComponent: 0)]
         }
         
@@ -1032,12 +1002,11 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate, UIPickerV
     var initialSourceLocationString = String()
     var initialDestLocationString = String()
     
-    @IBAction func switchButtonClicked(_ sender: UIButton) { //all the actions in here occur right away...so it's the map slowing us down
-        initialSourceLocationString = sourceTextField.text! //log the first text field
-        //initialDestLocationString = destTextField.text!
+    @IBAction func switchButtonClicked(_ sender: UIButton) {
+        initialSourceLocationString = sourceTextField.text!
         
-        sourceTextField.text = destTextField.text //switch the first to the second
-        destTextField.text = initialSourceLocationString //switch the second to the first's initial value
+        sourceTextField.text = destTextField.text
+        destTextField.text = initialSourceLocationString
     }
     
     @IBAction func settingsButtonClicked(_ sender: UIBarButtonItem) {
@@ -1048,30 +1017,19 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate, UIPickerV
 
     @IBAction func goButtonClicked(_ sender: UIButton) {
         
-        if graphNodesFlipped[destTextField.text!] != nil && graphNodesFlipped[sourceTextField.text!] != nil{ //check if the entries are valid
-            
-            //easter egg
-            if destTextField.text! == "404" && sourceTextField.text == "404" {
-                
-                let alert = UIAlertController(title: "Error", message: "Error 404: Route Not Found", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                self.present(alert, animated: true)
-            }
-            
-            firstFloorPoints.removeAll() //must reset these to empty arrays; prevents inclusion of previous routes on the polyline
+        if graphNodesFlipped[destTextField.text!] != nil && graphNodesFlipped[sourceTextField.text!] != nil {
+            firstFloorPoints.removeAll()
             secondFloorPoints.removeAll()
             
-            var sourceNode:MyNode! = graphNodesFlipped[sourceTextField.text!] //use the text to lookup the sourcenode--string must be the nodename
-            var destNode:MyNode! = graphNodesFlipped[destTextField.text!]
+            var sourceNode : MyNode! = graphNodesFlipped[sourceTextField.text!]
+            var destNode : MyNode! = graphNodesFlipped[destTextField.text!]
             
+            // hard coded special case
             if schoolName == "Glenbrook South High School" {
-                if sourceNode.getName() == "360" && latitudes_first.keys.contains(destNode.getName()){ //take care of the case where room 360 goes upstairs, then downstairs again during 360-old pit room
-                    sourceNode.removeConnection(to: graphNodesFlipped["066"]!) //this is bidirectional by default
+                if (sourceNode.getName() == "360" && latitudes_first.keys.contains(destNode.getName()) || destNode.getName() == "360" && latitudes_first.keys.contains(sourceNode.getName())) {
+                    sourceNode.removeConnection(to: graphNodesFlipped["066"]!)
                 }
-                    
-                else if destNode.getName() == "360" && latitudes_first.keys.contains(sourceNode.getName()) { //take care of the same case as above but in reverse
-                    destNode.removeConnection(to: graphNodesFlipped["066"]!) //remove 066 (stair access node from 360's connections)
-                }
+
             }
             
             var routePath = myGraph.findPath(from: sourceNode, to: destNode) //find the path with builtin GK findPath func
@@ -1084,34 +1042,31 @@ class SourceDestViewController: UIViewController, UITextFieldDelegate, UIPickerV
             routeName = sourceTextField.text! + "-" + destTextField.text! //see override func below
             lastCoordName = destTextField.text!
             
-            func makeRoutePoints(array:[GKGraphNode]) { //takes routePath as the argument, creates an array of string lat/long coords from plist
+            func makeRoutePoints(array : [GKGraphNode]) { //takes routePath as the argument, creates an array of string lat/long coords from plist
                 
-                array.compactMap({ $0 as? MyNode}).forEach { node in //iterate through the routePath
-                    //create two new variables- one for the latitudes dict on the specific floor and one for the longitudes dict. Assign the variables to the correct dictionary after checking the node
+                array.compactMap({ $0 as? MyNode}).forEach { node in
                     
-                    let z = node.getName() //name is used to lookup lat/long
+                    let z = node.getName()
                     
                     var nodeLatitude:Double!
                     var nodeLongitude:Double!
                     
                     if latitudes_first.keys.contains(z) {
-                        firstFloorPath.append(node) //do not remove
+                        firstFloorPath.append(node)
                         nodeLatitude = (latitudes_first[z])?.doubleValue
                         nodeLongitude = (longitudes_first[z])?.doubleValue
     
                         var coordString:String = "{"+String(nodeLatitude!)+","
-                        coordString+=String(nodeLongitude!)+"}"  //must have !
-                        firstFloorPoints.append(coordString) //contains an array of strings (coordinates)
-                    }
-                        
-                    else {
-                        secondFloorPath.append(node) //do not remove
+                        coordString+=String(nodeLongitude!) + "}"
+                        firstFloorPoints.append(coordString)
+                    } else {
+                        secondFloorPath.append(node)
                         nodeLatitude = (latitudes_second[z])?.doubleValue
                         nodeLongitude = (longitudes_second[z])?.doubleValue
                         
-                        var coordString:String = "{"+String(nodeLatitude!)+","
-                        coordString+=String(nodeLongitude!)+"}"  //must have !
-                        secondFloorPoints.append(coordString) //contains an array of strings (coordinates)
+                        var coordString:String = "{" + String(nodeLatitude!) + ","
+                        coordString+=String(nodeLongitude!) + "}"
+                        secondFloorPoints.append(coordString)
                     }
                         
                 }
